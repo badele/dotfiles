@@ -115,10 +115,10 @@ zinit light zsh-users/zsh-completions
 zinit ice as"completion"
 zinit snippet OMZ::plugins/docker/_docker
 
-zzinit ice as"completion"
+zinit ice as"completion"
 zinit snippet OMZ::plugins/fd/_fd
 
-init ice as"completion"
+zinit ice as"completion"
 zinit snippet OMZ::plugins/pass/_pass
 
 zinit ice as"completion"
