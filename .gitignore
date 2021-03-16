@@ -1,7 +1,8 @@
 # GPG
-.gnupg/*
-!.gnupg/gpg-agent.conf
-!.gnupg/sshcontrol
+.config/gnupg/*
+!.config/gnupg/gpg.conf
+!.config/gnupg/gpg-agent.conf
+!.config/gnupg/sshcontrol
 
 .config/zinit
 .cache
