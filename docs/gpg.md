@@ -50,6 +50,12 @@ gpg --import ${GPG_BACKUP_DIR}/lastkeys/secret_subkeys.gpg
 gpg -K # You should see 'sec #', indicates that the master key does not have a private key
 ```
 
+## GPG agent configuration for SSH and GIT
+See files
+- `~/.gnupg/gpg-agent.conf`
+- `~/.gnupg/sshcontrol`
+- `.gitconfig`
+
 ## Annex
 ```
 # Show key information
