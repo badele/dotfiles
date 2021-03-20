@@ -47,10 +47,10 @@ zinit snippet OMZP::direnv
 zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
 zinit light junegunn/fzf
 
-# Colorize the files with cat, less (alias to ccat,cless)
-# yay -S python-pygments
-zinit ice wait lucid
-zinit snippet OMZP::colorize
+# # Colorize the files with cat, less (alias to ccat,cless)
+# # yay -S python-pygments
+# zinit ice wait lucid
+# zinit snippet OMZP::colorize
 
 # Create alias for git commands
 # yay -S git
@@ -117,9 +117,6 @@ zinit snippet OMZ::plugins/docker/_docker
 
 zinit ice as"completion"
 zinit snippet OMZ::plugins/fd/_fd
-
-zinit ice as"completion"
-zinit snippet OMZ::plugins/pass/_pass
 
 zinit ice as"completion"
 zinit snippet OMZ::plugins/golang/golang.plugin.zsh
