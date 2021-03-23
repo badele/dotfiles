@@ -1,0 +1,262 @@
+
+#
+# ██╗██████╗
+# ██║╚════██╗
+# ██║ █████╔╝
+# ██║ ╚═══██╗
+# ██║██████╔╝
+# ╚═╝╚═════╝
+# Generated with wpg template, apply with `wpg -s $(wpg -c)`
+
+
+# Set vars and parameters
+floating_modifier $mod
+set $mod Mod4
+set $alt Mod1
+set $ctrl ctrl
+set $terminal termite
+set $i3lock blurlock
+set $border 1
+set $gaps_inner 6
+set $gaps_outer 2
+
+# Window parameters
+font xft:Source Code Pro 11
+new_window pixel $border
+new_float pixel $border
+gaps inner $gaps_inner
+gaps outer $gaps_outer
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+#smart_gaps on
+#smart_borders on
+
+# Shortcut
+bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+r restart; exec notify-send 'i3 restarted'
+bindsym $mod+q kill
+bindsym $mod+k --release exec --no-startup-id xkill
+
+# Lock screen
+bindsym $mod+l exec $i3lock
+bindsym $mod+$ctrl+l exec xtrlock
+
+# launch menu
+bindsym $mod+space exec --no-startup-id rofi -combi-modi run#drun -show combi
+bindsym $mod+d exec --no-startup-id dmenu_recency
+bindsym $mod+m exec --no-startup-id morc_menu
+bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
+
+# TODO: review this section
+#bindsym --release Print exec screenshot_full
+#bindsym --release Shift+Print exec screenshot_selection
+
+# Screenchot
+bindsym Print exec --no-startup-id i3-scrot
+bindsym Shift+Print --release exec --no-startup-id i3-scrot -s
+
+
+# Window focus
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Down focus down
+bindsym $mod+Left focus left
+
+# Window movement
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Left move left
+
+# Spliting
+bindsym $mod+h split h;exec notify-send 'split horizontally'
+bindsym $mod+v split v;exec notify-send 'split vertically'
+
+# floating and fullscreen
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+s sticky toggle
+bindsym $mod+f fullscreen
+
+# Screen brightness controls
+# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+
+# Workspaces navigation
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+set $w1 "1:  TSK"
+set $w2 "2:  MUS"
+set $w2 "3:  CHAT"
+set $w3 "VID"
+set $w4 "VIRT"
+set $w5 "5:  GFX"
+set $w6 "6:  WWW"
+set $w7 "7:  TERM"
+set $w8 "8:  DEV"
+set $w9 "9:  TERM"
+set $w0 "SYS"
+
+# Switch to workspace
+bindsym $mod+ampersand workspace $w1
+bindsym $mod+eacute workspace $w2
+bindsym $mod+quotedbl workspace $w3
+bindsym $mod+apostrophe workspace $w4
+bindsym $mod+parenleft workspace  $w5
+bindsym $mod+minus workspace $w6
+bindsym $mod+egrave workspace $w7
+bindsym $mod+underscore workspace $w8
+bindsym $mod+ccedilla workspace $w9
+bindsym $mod+agrave workspace  $w0
+
+# Move focused container to workspace
+bindsym $mod+Shift+ampersand move container to workspace  $w1
+bindsym $mod+Shift+eacute move container to workspace  $w2
+bindsym $mod+Shift+quotedbl move container to workspace  $w3
+bindsym $mod+Shift+apostrophe move container to workspace  $w4
+bindsym $mod+Shift+5 move container to workspace $w5
+bindsym $mod+Shift+minus move container to workspace $w6
+bindsym $mod+Shift+egrave move container to workspace $w7
+bindsym $mod+Shift+underscore move container to workspace $w8
+bindsym $mod+Shift+ccedilla move container to workspace $w9
+bindsym $mod+Shift+agrave move container to workspace $w0
+
+# Use get_i3_window_name
+# Assign applications on specific workspaces
+assign [class="Google-chrome"] $w6
+
+# Use get_i3_window_name
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel $border
+for_window [class="calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="fpakman"] floating enable
+for_window [class="Galculator"] floating enable border pixel $border
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-settings"] floating enable
+for_window [class="Lxappearance"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Oblogout"] fullscreen enable
+for_window [class="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Skype"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="Xfburn"] floating enable
+#for_window [urgent=latest] focus
+
+# Set shut down, restart and locking features
+bindsym $mod+Shift+e mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {{
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}}
+
+# Resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+mode "resize" {{
+        bindsym Left resize shrink width 30px or 10ppt
+        bindsym Down resize grow height 30px or 10ppt
+        bindsym Up resize shrink height 30px or 10ppt
+        bindsym Right resize grow width 30px or 10ppt
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}}
+
+
+# Autostart applications
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id $HOME/.config/wpg/wp_init.sh
+exec --no-startup-id picom -b
+exec --no-startup-id polybar bar -r
+#exec --no-startup-id pulseaudio
+#exec --no-startup-id pa-applet
+#bindsym $mod+Ctrl+m exec pavucontrol
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id pamac-tray
+exec --no-startup-id clipit
+# exec --no-startup-id blueman-applet
+# exec_always --no-startup-id sbxkb
+#exec --no-startup-id start_conky_maia
+# exec --no-startup-id start_conky_green
+exec --no-startup-id xautolock -time 10 -locker $i3lock
+#exec_always --no-startup-id ff-theme-util
+#exec_always --no-startup-id fix_xcursor
+
+
+# Color palette used for the terminal ( ~/.Xresources file )
+# Colors are gathered based on the documentation:
+# https://i3wm.org/docs/userguide.html#xresources
+# Change the variable name at the place you want to match the color
+# of your terminal like this:
+# [example]
+# If you want your bar to have the same background color as your
+# terminal background change the line 362 from:
+# background #14191D
+# to:
+# background $term_background
+# Same logic applied to everything else.
+# set_from_resource $term_background background
+# set_from_resource $term_foreground foreground
+# set_from_resource $term_color0     color0
+# set_from_resource $term_color1     color1
+# set_from_resource $term_color2     color2
+# set_from_resource $term_color3     color3
+# set_from_resource $term_color4     color4
+# set_from_resource $term_color5     color5
+# set_from_resource $term_color6     color6
+# set_from_resource $term_color7     color7
+# set_from_resource $term_color8     color8
+# set_from_resource $term_color9     color9
+# set_from_resource $term_color10    color10
+# set_from_resource $term_color11    color11
+# set_from_resource $term_color12    color12
+# set_from_resource $term_color13    color13
+# set_from_resource $term_color14    color14
+# set_from_resource $term_color15    color15
+
+default_border pixel $border
+for_window [class=".*"] border pixel $border
+
+# Theme colors
+# class                 border  backgr. text    indicator child_border
+client.focused          {color4} {color0} {color15} {color9}   {color1}
+client.focused_inactive #333333 #5f676a {color15} #484e50   {color8}
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 {color15} #900000   #900000
+client.placeholder      #000000 #0c0c0c {color15} #000000   #0c0c0c
+
+client.background       {color15}
+
+#############################
+### settings for i3-gaps: ###
+#############################
+
+# Set inner/outer gaps
+gaps outer 10
+gaps inner 10
+gaps top 45
