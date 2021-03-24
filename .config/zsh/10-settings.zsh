@@ -7,7 +7,7 @@
 # ╚══════╝╚══════╝   ╚═╝      ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
 
 # ZSH
-setopt no_beep				# no beep
+setopt no_beep				            # no beep
 setopt rm_star_wait                 	# wait 10 seconds before running `rm *`
 setopt hist_ignore_dups             	# ignore history duplication
 setopt hist_expire_dups_first       	# remove oldest duplicate commands from the history first

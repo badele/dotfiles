@@ -19,6 +19,11 @@ setopt promptsubst
 # Plugins
 ################################
 
+# autojump
+# yay -S autojump
+zinit ice wait lucid
+zinit snippet OMZP::autojump
+
 # AWS cli
 # yay -S aws-cli
 zinit ice wait lucid
@@ -47,16 +52,6 @@ zinit snippet OMZP::direnv
 zinit ice wait lucid multisrc'shell/{key-bindings,completion}.zsh'
 zinit light junegunn/fzf
 
-# # Colorize the files with cat, less (alias to ccat,cless)
-# # yay -S python-pygments
-# zinit ice wait lucid
-# zinit snippet OMZP::colorize
-
-# Create alias for git commands
-# yay -S git
-zinit ice wait lucid
-zinit snippet OMZP::git
-
 # Create alias for colorize some output executable
 # yay -S grc
 zinit ice wait lucid
@@ -79,15 +74,6 @@ zinit light hcgraf/zsh-sudo
 zinit ice wait blockf lucid
 zinit light rupa/z
 
-# Show frequencies used folders
-# z / fzf (ctrl-g)
-zinit ice wait lucid
-zinit light andrewferrier/fzf-z
-
-# Extract plugin (same executable for archive multiple format)
-zinit ice wait lucid
-zinit light thetic/extract
-
 # autopair brackets etc
 zinit ice wait'1' lucid
 zinit light hlissner/zsh-autopair
@@ -96,14 +82,13 @@ zinit light hlissner/zsh-autopair
 zinit ice wait lucid
 zinit light djui/alias-tips
 
-zinit ice wait lucid atload"zicompinit; zicdreplay"
-zinit light zdharma/fast-syntax-highlighting
-
-#zinit ice wait lucid
-#zinit light zsh-users/zsh-autosuggestions
-
+# Search substring in history
 zinit ice wait lucid
 zinit light zsh-users/zsh-history-substring-search
+
+# Syntax highlighting
+zinit ice wait lucid atinit'zpcompinit; zpcdreplay'
+zinit light zdharma/fast-syntax-highlighting
 
 ################################
 # Completion
@@ -126,17 +111,6 @@ zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
 
 zinit ice as"completion"
 zinit snippet OMZ::plugins/ripgrep/_ripgrep
-
-#zinit ice blockf atpull'zinit creinstall -q .'
-#zinit light zsh-users/zsh-completions
-
-# Active autocompletion
-#autoload -Uz compinit
-#compinit
-
-# Must be downloaded after completion plugins
-#zinit ice wait lucid
-#zinit light zdharma/fast-syntax-highlighting
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
