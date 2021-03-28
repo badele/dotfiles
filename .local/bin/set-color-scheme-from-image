@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Compute and set Colorscheme
+wpg -a $1
+wpg -A $1
+
+# Select theme
+wpg -s $1 | grep -v 'icons - base file does not exist' | grep '\[e\]' && notify-send -u critical "Error $1 theme selelection" || notify-send "$1 colorscheme selected"
