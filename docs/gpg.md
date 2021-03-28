@@ -40,7 +40,7 @@ gpg --send-key ${GPG_USERID}
 
 # Backup (script in .local/bin)
 # Before run bellow command, edit ~/.config/zsh/variables.zsh (GPG_USERID and GPG_BACKUP_DIR)
-gpg_backup_keys
+gpg-backup-keys
 
 # Secure keys (delete primary key from computer)
 gpg --delete-secret-key ${GPG_USERID}
