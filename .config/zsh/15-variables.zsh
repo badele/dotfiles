@@ -6,6 +6,9 @@
 #  ╚████╔╝ ██║  ██║██║  ██║██║██║  ██║██████╔╝███████╗███████╗███████║
 #   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚══════╝
 
+# Terminal
+export TERMINAL=termite
+
 # Less for colors man page
 export LESS="-FSRXI"
 

@@ -35,3 +35,5 @@ autoload -Uz _zinit
 
 # Load other ~.config/zsh/*.zsh files
 for config (${HOME}/.config/zsh/*.zsh) source $config;
+
+neofetch

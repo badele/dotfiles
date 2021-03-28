@@ -15,6 +15,10 @@ alias zh="zhelp"
 
 #alias colortest="msgcat --color=test'
 alias colortest="tpal art spaceinvaders; tpal art yinyang; tpal minimat; wpg --preview"
-alias aclock="tty-clock -b -c -C 6 -f \"%A %d/%m/%y\" -B -a 100000000 -d 0"
+
+# Date & Time
+alias clock="peaclock --config-dir ~/.config/peaclock --config ~/.config/peaclock/clock"
+alias pomodoro="peaclock --config-dir ~/.config/peaclock --config ~/.config/peaclock/countdown"
+alias stopwatch="peaclock --config-dir ~/.config/peaclock --config ~/.config/peaclock/stopwatch"
 
 alias get_i3_window_name="xprop | grep CLASS"
