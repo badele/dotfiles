@@ -42,7 +42,7 @@ bindsym $mod+l exec $i3lock
 bindsym $mod+$ctrl+l exec xtrlock
 
 # launch menu
-bindsym $mod+space exec --no-startup-id rofi -combi-modi run#drun -show combi
+bindsym $mod+space exec --no-startup-id "rofi -theme-str 'element-icon { size: 1.0em;}' -show drun"
 bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+m exec --no-startup-id morc_menu
 bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
@@ -128,6 +128,7 @@ assign [class="Google-chrome"] $w6
 # Use get_i3_window_name
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel $border
+
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
