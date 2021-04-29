@@ -7,26 +7,16 @@
 # ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
 
 
-# zkeys: Show ZSH keys shorcuts
+# Show Alias
 zalias() {
-	cat ~/.config/zsh/alias.zsh | pcregrep -o1  "^alias (.*)"
+	cat ~/.config/zsh/80-alias.zsh | pcregrep -o1  "^alias (.*)"
 }
 
-# zkeys: Show ZSH keys shorcuts
+# Show ZSH keys
 zkeys() {
-	cat ~/.config/zsh/bindkeys.zsh | egrep -o "# \[.*"
+	cat ~/.config/zsh/90-bindkeys.zsh | egrep -o "# \[.*"
 }
 
-# zfuncs: Show functions name
-zfuncs() {
-	cat ~/.config/zsh/functions.zsh | egrep -o "# .*\: [A-Z].*"
-}
-
-# TODO: convert to navi file
-zhelp() {
-  echo "zkeys   show ZSH keys binding"
-  echo "zfuncs  show ZSH functions"
-}
 
 # navi menu
 _call_navi() {

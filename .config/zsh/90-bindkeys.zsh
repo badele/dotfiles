@@ -21,9 +21,9 @@ bindkey "^[[A"      history-substring-search-up     # [Up]              Search u
 bindkey "^[[B"      history-substring-search-down   # [Down]            Search down substring history
 
 # FZF & Z
-bindkey "^R" 		fzf-history-widget	# [CTRL-R]		Show FZF histories
-bindkey "^T" 		fzf-file-widget		# [CTRL-T]		Show FZF files
-bindkey "^F" 		fzf-cd-widget		# [CTRL-F]		Goto FZF selected folder
+bindkey "^R" 		fzf-history-widget	            # [CTRL-R]		Show FZF histories
+bindkey "^T" 		fzf-file-widget		            # [CTRL-T]		Show FZF files
+bindkey "^F" 		fzf-cd-widget		            # [CTRL-F]		Goto FZF selected folder
 
 # navi
-bindkey '^N' 		_call_navi		# [CTRL-N]		Show navi menu
+bindkey '^N' 		_call_navi		                # [CTRL-N]		Show navi menu

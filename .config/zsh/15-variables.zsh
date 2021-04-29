@@ -6,6 +6,9 @@
 #  ╚████╔╝ ██║  ██║██║  ██║██║██║  ██║██████╔╝███████╗███████╗███████║
 #   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚══════╝
 
+# Paths
+export PATH=${HOME}/.local/bin:${PATH}
+
 # Terminal
 export TERMINAL=termite
 
@@ -24,6 +27,6 @@ export GPG_USERID=00F421C4C5377BA39820E13F6B95E13DE469CC5D
 export GPG_BACKUP_DIR=/mnt/usb-black-disk/freefilesync/famille/bruno/home/security/gpg
 
 # Private folderss
-export WORK=/home/$HOME/work/projects
-export PRIVATE=/home/$HOME/private/projects
+export WORK=${HOME}/work/projects
+export PRIVATE=${HOME}/private/projects
 export PASSWORD_STORE_DIR=${PRIVATE}/pass
