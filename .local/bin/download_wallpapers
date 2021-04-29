@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+
+# Get max monitors resolution
+maxres=$(xrandr | grep '*' | sort -n | tail -1 | awk '{ print $1 }')
+
+FOLDER="$HOME/Images"
+if [ "$1" != "" ]; then
+  FOLDER=$1
+fi
+FOLDER=$(realpath "$FOLDER")
+mkdir -p $FOLDER
+
+# Download and resize a wallpapers
+function wresize() {
+    if [ -e ${FOLDER}/${2} ]; then
+			echo "$1 Allready Downloaded"
+    else
+			echo "Downloaded $1"
+      wget -U "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)" -O /tmp/image.png "$1"
+      convert /tmp/image.png -strip \
+      -resize "$maxres^" \
+      -gravity center \
+      -extent "$maxres^" \
+      "${FOLDER}/$2"
+    fi
+}
+
+wresize "https://i.redd.it/fang0g4ohin61.jpg" "solar_system.jpg"
+wresize "https://static.pexels.com/photos/417014/pexels-photo-417014.jpeg" escalator1_pexels.jpg
+wresize "https://static.pexels.com/photos/540518/pexels-photo-540518.jpeg" mountain1_pexels.jpg
+wresize "https://images.unsplash.com/photo-1440688807730-73e4e2169fb8?q=80&fm=jpg&s=79978a74e55792a7a5182ba0c0aa4e25" forest1_unspash.jpg
+wresize "https://static.pexels.com/photos/6718/mountains-clouds-forest-trees.jpg" forest4_pexels.jpg
+wresize "https://wallpaperscraft.com/image/forest_trees_fog_110485_6000x4000.jpg" forest5_wallpaperscaft.jpg
+wresize "https://static.pexels.com/photos/731082/pexels-photo-731082.jpeg" house1_pexels.jpg
+wresize "https://static.pexels.com/photos/217316/pexels-photo-217316.jpeg" keys1_pexels.jpg
+wresize "https://static.pexels.com/photos/700439/pexels-photo-700439.jpeg" leaf1_pexels.jpg
+wresize "https://static.pexels.com/photos/106400/pexels-photo-106400.jpeg" mobile1_pexels.jpg
+wresize "https://static.pexels.com/photos/913215/pexels-photo-913215.jpeg" mountain3_pexels.jpg
+wresize "https://wallpaperscraft.com/image/yosemite_valley_mountains_night_stars_119242_4644x4306.jpg" mountain6_wallpaperscraft.jpg
+wresize "https://static.pexels.com/photos/761963/pexels-photo-761963.jpeg" music1_pexel.jpg
+wresize "https://static.pexels.com/photos/728824/pexels-photo-728824.jpeg" plane1_pexels.jpg
+wresize "https://static.pexels.com/photos/248159/pexels-photo-248159.jpeg" road1_pexels.jpg
+wresize "https://static.pexels.com/photos/531321/pexels-photo-531321.jpeg" road3_pexels.jpg
+wresize "https://i.redd.it/c2z0d5736mn61.png" "clouds.png"
+wresize "https://static.pexels.com/photos/99551/hot-air-balloon-valley-sky-99551.jpeg" balloon1_pexels.jpg
+wresize "https://static.pexels.com/photos/171940/pexels-photo-171940.jpeg" blur1_pexels.jpg
+wresize "https://static.pexels.com/photos/8395/lights-night-unsharp-blured.jpg" blur2_pexels.jpg
+wresize "https://static.pexels.com/photos/544917/pexels-photo-544917.jpeg"  blur4_pexels.jpg
+wresize "https://static.pexels.com/photos/698589/pexels-photo-698589.jpeg" city1_pexels.jpg
+wresize "https://wallpaperscraft.com/image/san_francisco_usa_bridge_skyscrapers_beach_118777_3840x2160.jpg" city5_wallpaperscraft.jpg
+wresize "https://static.pexels.com/photos/2059/restaurant-red-beans-coffee.jpg" coffee1_pexels.jpg
+wresize "https://static.pexels.com/photos/1547/light-blur-blurred-background.jpg" fire1_pexels.jpg
+wresize "https://static.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg" flower1_pexels.jpg
+wresize "https://static.pexels.com/photos/192136/pexels-photo-192136.jpeg" grass2_pexels.jpg
+wresize "https://static.pexels.com/photos/42263/foggy-mist-forest-trees-42263.jpeg" house2_pexels.jpg
+wresize "https://wallpaperscraft.com/image/italy_florence_fog_dawn_sky_119350_5472x3648.jpg" mountain7_wallpaperscraft.jpg
+wresize "http://static.simpledesktops.com/uploads/desktops/2014/06/20/RainbowTiles_Wallpaper.png" rainbow_simpledesktops.jpg
+wresize "https://static.pexels.com/photos/204366/pexels-photo-204366.jpeg" road2_pexels.jpg
+wresize "https://static.pexels.com/photos/11744/pexels-photo-11744.jpeg" road4_pexels.jpg
+wresize "https://wallpaperscraft.com/image/boat_sea_view_from_above_water_119937_2031x2031.jpg" sea1_wallpaperscraft.jpg
+wresize "https://static.pexels.com/photos/753994/pexels-photo-753994.jpeg" sky1_pexels.jpg
+wresize "https://static.pexels.com/photos/66997/pexels-photo-66997.jpeg" sky2_pexels.jpg
+wresize "https://static.pexels.com/photos/724712/pexels-photo-724712.jpeg" train1_pexels.jpg
+wresize "https://static.pexels.com/photos/921319/pexels-photo-921319.png" wall1_pexels.jpg
+wresize "https://static.pexels.com/photos/906503/pexels-photo-906503.jpeg" wall2_pexels.jpg
+wresize "https://static.pexels.com/photos/698319/pexels-photo-698319.jpeg" wall3_pexels.jpg
+wresize "http://www.tokkoro.com/picsup/427348-anonymous-hd-widescreen-wallpapers-backgrounds.jpeg" anonymous1_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2986141-anonymous-face-mask-minimalism-guy-fawkes-mask-hope-posters___mixed-wallpapers.jpg" anonymous2_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2622646-minimalism-4k-amazing-hd-wallpaper.jpg" atari1_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2942903-artwork___abstract-wallpapers.jpg" city6_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2812964-vintage-car___retro-vintage-wallpapers.jpg" city7_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2744742-minimalism-4k-best-image.jpg" food3_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2746365-triangle-4k-wallpaper-pack-1080p-hd.jpg" grass3_tokooro.jpg
+wresize "http://www.tokkoro.com/picsup/2735267-stripes-4k-download-wallpapers-hd-for-pc.jpg" line1_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2812988-minimalism-vintage___retro-vintage-wallpapers.jpg" line2_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2636690-minimalism-4k-wallpaper-hd-free.jpg" mountain8_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2627307-minimalism-4k-wallpaper-pictures-free.jpg" mountain10_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2618475-minimalism-4k-pic-hd-desktop.jpg" mountain11_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2813115-retro-games-mountain-8-bit___retro-vintage-wallpapers.jpg" mountain12_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2813150-pong-retro-games-old-text___retro-vintage-wallpapers.jpg" pong1_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2609749-8-bit-wallpaper-backgrounds-hd.jpg" sea2_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2852665-space-planet-galaxy-space-art___cosmos-space-wallpapers.jpg" space1_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2849166-nasa-sky-universe-astronaut-earth-futuristic___cosmos-space-wallpapers.jpg" space2_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2626828-minimalism-4k-hd-image-download.jpg" square1_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2813159-digital-art-blue-background-simple-background-minimalism-vintage-tape-cassettes-rust-tape-cassettes-text-destruction___retro-vintage-wallpapers.jpg" tape1_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2746078-abstract-4k-cool-hd-wallpaper.jpg" x1_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2834832-the-legend-of-zelda-artwork-video-games___game-wallpapers.jpg" zelda2_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2905283-the-legend-of-zelda-link-artwork-digital-art-loz___mixed-wallpapers.jpg" zelda3_tokkoro.jpg
+wresize "https://orig00.deviantart.net/5d21/f/2009/179/5/b/hint_of_light_bokeh_wallpaper_by_deviantdutchie.png" blur5_deviantart.jpg
+wresize "https://www.wallpaperup.com/uploads/wallpapers/2015/06/12/720367/d7ad5c74d369e5a4ee434166fc5c8c1b-1400.jpg" "bike1.jpg"
+wresize "http://www.tokkoro.com/picsup/2743825-colors-4k-wallpaper-hd-background.jpg" blur7_tokkoro.jpg
+wresize "http://www.tokkoro.com/picsup/2618072-minimalism-4k-windows-wallpaper-download.jpg" abstract2_tokkoro.jpg
+
+# Set themes
+wpg -a $FOLDER/*
+wpg -A $FOLDER/*
+
+# Select random scheme
+set-color-scheme-from-image

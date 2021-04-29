@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+status="$(playerctl status 2> /dev/null)"
+metadata="$(playerctl metadata -f '{{title}} - {{artist}}' 2> /dev/null)"
+
+if [ "$status" = "Playing" ]; then
+    printf "%s" " $metadata"
+else
+    printf "%s" " $metadata"
+fi
