@@ -28,8 +28,8 @@ line-size = 2
 locale = fr_FR.UTF-8
 
 
-[bar/bar]
-monitor = Virtual1
+[bar/top]
+monitor = ${env:MONITOR:}
 
 inherit = global_options
 
@@ -291,7 +291,7 @@ type = custom/script
 format-foreground = {color7}
 
 
-exec = ~/.config/polybar/scripts/player-status.sh
+exec = player-status
 interval = 1
 
 click-left = playerctl play-pause
