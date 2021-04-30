@@ -1,16 +1,27 @@
 #!/usr/bin/env bash
 
+# Check if dunst running
+pgrep dunst > /dev/null
+if [ pgrep dunst > /dev/null ]; then
+    NOTIFY=notify-send
+else
+    NOTIFY=echo
+fi
+
+# Generate files from wpg templates
 if [ -z "$1" ]; then
     # Select random theme
     wpg -a ${HOME}/Images/*
     wpg -A ${HOME}/Images/*
 
-    wpg -s $(wpg -l | shuf | head -n1)
+    wpg -s default_square_tokkoro.jpg | grep -v 'icons - base file does not exist' | grep '\[e\]' && $NOTIFY -u critical "Error $1 theme selelection" || $NOTIFY "$1 colorscheme selected"
 else
     # Compute and set Colorscheme
     wpg -a $1
     wpg -A $1
 
     # Select theme
-    wpg -s $1 | grep -v 'icons - base file does not exist' | grep '\[e\]' && notify-send -u critical "Error $1 theme selelection" || notify-send "$1 colorscheme selected"
+    wpg -s $1 | grep -v 'icons - base file does not exist' | grep '\[e\]' && $NOTIFY -u critical "Error $1 theme selelection" || $NOTIFY "$1 colorscheme selected"
 fi
+
+rm ~/Images/*colorz_sample.png

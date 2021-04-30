@@ -29,7 +29,7 @@ locale = fr_FR.UTF-8
 
 
 [bar/top]
-monitor = ${env:MONITOR:}
+monitor = ${{env:MONITOR:}}
 
 inherit = global_options
 
@@ -291,7 +291,7 @@ type = custom/script
 format-foreground = {color7}
 
 
-exec = player-status
+exec = ~/.local/bin/player-status
 interval = 1
 
 click-left = playerctl play-pause
