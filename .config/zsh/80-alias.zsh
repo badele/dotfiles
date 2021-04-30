@@ -6,12 +6,12 @@
 # ██║  ██║███████╗██║██║  ██║███████║
 # ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚══════╝
 
-# Long ls
 alias ll="ls -alh"
 alias gs="git status"
 alias gp="git push"
 alias zs="zinit zstatus"
-alias zh="zhelp"
+alias cdw='cd $WORK'
+alias cdp='cd $PRIVATE'
 
 #alias colortest="msgcat --color=test'
 alias colortest="tpal art spaceinvaders; tpal art yinyang; tpal minimat; wpg --preview"
