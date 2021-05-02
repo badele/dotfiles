@@ -190,8 +190,8 @@ mode "resize" {{
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id $HOME/.config/wpg/wp_init.sh
-exec --no-startup-id picom -b
+exec --no-startup-id picom -b picom -i 0.96 -I 0.05 -O 0.05
+exec --no-startup-id $HOME/.local/bin/set-color-scheme-from-image
 exec --no-startup-id ~/.local/bin/launch-polybar
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet

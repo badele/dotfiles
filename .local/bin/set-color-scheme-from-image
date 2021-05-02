@@ -1,27 +1,37 @@
 #!/usr/bin/env bash
 
+set -x
+
 # Check if dunst running
 pgrep dunst > /dev/null
-if [ pgrep dunst > /dev/null ]; then
+if [ $? ]; then
     NOTIFY=notify-send
 else
     NOTIFY=echo
 fi
 
 # Generate files from wpg templates
-if [ -z "$1" ]; then
-    # Select random theme
-    wpg -a ${HOME}/Images/*
-    wpg -A ${HOME}/Images/*
-
-    wpg -s default_square_tokkoro.jpg | grep -v 'icons - base file does not exist' | grep '\[e\]' && $NOTIFY -u critical "Error $1 theme selelection" || $NOTIFY "$1 colorscheme selected"
+if [ -n "$1" ]; then
+    IMG=$1
 else
-    # Compute and set Colorscheme
-    wpg -a $1
-    wpg -A $1
+    CURRENT=$(wpg -c)
 
-    # Select theme
-    wpg -s $1 | grep -v 'icons - base file does not exist' | grep '\[e\]' && $NOTIFY -u critical "Error $1 theme selelection" || $NOTIFY "$1 colorscheme selected"
+    if [ "$CURRENT" != ".current" ]; then
+        IMG=$CURRENT
+    else
+        IMG=~/Images/default_square_tokkoro.jpg
+
+        wpg -a $IMG
+        wpg -A $IMG
+    fi
 fi
 
-rm ~/Images/*colorz_sample.png
+# Compute and set Colorscheme
+wpg -a ${IMG}
+wpg -A ${IMG}
+
+# Select theme
+wpg -s ${IMG} | grep -v 'icons - base file does not exist' | grep '\[e\]' && $NOTIFY -u critical "Error ${IMG} theme selelection" || $NOTIFY "${IMG} colorscheme selected"
+feh --bg-center ~/Images/$(wpg -c)
+
+rm -f ~/Images/*colorz_sample.png
