@@ -87,15 +87,14 @@ bindsym $mod+Ctrl+Left workspace prev
 
 set $w1 "1:  TSK"
 set $w2 "2:  MUS"
-set $w2 "3:  CHAT"
-set $w3 "VID"
-set $w4 "VIRT"
-set $w5 "5:  GFX"
-set $w6 "6:  WWW"
-set $w7 "7:  TERM"
-set $w8 "8:  DEV"
-set $w9 "9:  TERM"
-set $w0 "SYS"
+set $w3 "3:  CHAT"
+set $w4 "4:  VIRT"
+set $w5 "5:  TERM"
+set $w6 "6:  GFX"
+set $w7 "7:  WWW"
+set $w8 "8:  TERM"
+set $w9 "9:  DEV"
+set $w0 "0:  TERM"
 
 # Switch to workspace
 bindsym $mod+ampersand workspace $w1

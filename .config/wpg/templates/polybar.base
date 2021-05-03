@@ -151,7 +151,7 @@ type = internal/cpu
 
 interval = 0.5
 format = <label> <ramp-coreload>
-label = "  %percentage%% "
+label = "  %percentage%% "
 
 #label-background = {color10}
 label-foreground = {color6}
