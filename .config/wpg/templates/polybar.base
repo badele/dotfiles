@@ -325,28 +325,26 @@ label-muted-padding = 0
 click-right = termite -e pulsemixer
 
 [module/backlight]
-type = internal/xbacklight
+type = internal/backlight
+card = amdgpu_bl0
+format = <ramp> <bar>
 
-; XRandR output to get get values from
-; Default: the monitor defined for the running bar
-output = Virtual1
+enable-scroll = true
 
-; Create scroll handlers used to set the backlight value
-; Default: true
-enable-scroll = false
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 
-format = <ramp> <label>
-#format-background = {color11}
-format-foreground = {color4}
-
-label = %percentage%%
-
-; Only applies if <ramp> is used
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
+bar-width = 10
+bar-indicator = |
+bar-indicator-font = 1
+bar-indicator-foreground = #ff
+bar-fill = ─
+bar-fill-font = 1
+bar-fill-foreground = #00FF00
+bar-empty = ─
+bar-empty-font = 1
+bar-empty-foreground = #000000
 
 # [module/decor-glyph]
 # type = custom/text

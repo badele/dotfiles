@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# User by browserpass
+gpg --homedir ~/.config/gnupg $*
