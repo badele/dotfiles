@@ -42,6 +42,11 @@ zinit snippet OMZP::gcloud
 zinit ice wait lucid
 zinit snippet OMZP::gpg-agent
 
+# pass
+zinit ice wait lucid
+zinit snippet OMZP::pass
+
+
 # direnv
 # yay -S direnv
 zinit ice wait lucid
