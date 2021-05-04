@@ -11,6 +11,7 @@ export PATH=${HOME}/.local/bin:${PATH}
 
 # Terminal
 export TERMINAL=termite
+export EDITOR=nvim
 
 # Less for colors man page
 export LESS="-FSRXI"
