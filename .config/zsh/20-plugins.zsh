@@ -42,11 +42,6 @@ zinit snippet OMZP::gcloud
 zinit ice wait lucid
 zinit snippet OMZP::gpg-agent
 
-# pass
-zinit ice wait lucid
-zinit snippet OMZP::pass
-
-
 # direnv
 # yay -S direnv
 zinit ice wait lucid
@@ -106,6 +101,9 @@ zinit ice as"completion"
 zinit snippet OMZ::plugins/docker/_docker
 
 zinit ice as"completion"
+zinit snippet OMZ::plugins/ripgrep/_ripgrep
+
+zinit ice as"completion"
 zinit snippet OMZ::plugins/fd/_fd
 
 zinit ice as"completion"
@@ -115,7 +113,8 @@ zinit ice as"completion"
 zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
 
 zinit ice as"completion"
-zinit snippet OMZ::plugins/ripgrep/_ripgrep
+zinit snippet OMZ::plugins/pass/_pass
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
