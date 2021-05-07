@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+volvalue=5
+
+mix () {
+    unmute=""
+    if [[ "$(pulsemixer --get-mute)" == "1" ]]; then
+        unmute="--toggle-mute"    
+    fi
+
+	case $1 in
+		up) 
+            pulsemixer $unmute --change-volume +"$volvalue" --id $2
+            notify-send "Source: $2 up"
+		;;
+		down) 
+            pulsemixer $unmute --change-volume -"$volvalue" --id $2
+            notify-send "Source: $2 down"
+		;;
+		mute) 
+			pulsemixer --toggle-mute --id $2
+            notify-send "Source: $2 mute"
+	esac
+}
+
+case $1 in
+    output)
+        mix $2 "sink-0"
+        ;;
+    mic)
+        mix $2 "source-1"
+        ;;
+esac

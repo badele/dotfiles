@@ -1,7 +1,7 @@
 configuration {
 
 // Config
-combi-modi: "window,drun,ssh";
+//combi-modi: "drun,window,ssh,pass,calc,p:rofi-power-menu";
 run-shell-command: "termite --name \"{cmd}\" -e \"{cmd}\"";
 
 // Display
@@ -15,3 +15,4 @@ icon-theme: "Papirus";
 element-icon {
     size:             1.0em ;
 }
+

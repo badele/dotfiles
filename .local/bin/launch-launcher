@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+export PATH=~/.local/bin:$PATH
+
+case $1 in
+    rofi)
+        case $2 in
+            power)
+                rofi -modi power:rofi-power-menu -show power:rofi-power-menu
+                ;;
+            search-mode)
+                SELECTEDMOD=$(echo "run|window|calc|power|keys|" | rofi -sep '|' -dmenu -p "Select mode:")
+                if [ -n "$SELECTEDMOD" ]; then
+                    $0 rofi $SELECTEDMOD
+                fi    
+                ;;
+            *)
+                rofi -modi drun,window,calc,keys -show $2
+                ;;
+        esac
+        ;;
+    fzf)
+        termite -t "app launcher" --class "app_launcher" -e sway-launcher-desktop
+        ;;
+esac

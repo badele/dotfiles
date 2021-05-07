@@ -17,7 +17,7 @@ else
     CURRENT=$(wpg -c)
 
     if [ "$CURRENT" != ".current" ]; then
-        IMG=$CURRENT
+        IMG=~/Images/$CURRENT
     else
         IMG=~/Images/default_square_tokkoro.jpg
 

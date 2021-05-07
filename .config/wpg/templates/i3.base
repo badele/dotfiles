@@ -42,10 +42,13 @@ bindsym $mod+l exec $i3lock
 bindsym $mod+$ctrl+l exec xtrlock
 
 # launch menu
-bindsym $mod+space exec --no-startup-id "rofi -theme-str 'element-icon {{ size: 1.0em;}}' -show drun"
-bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+m exec --no-startup-id morc_menu
-bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
+#bindsym $mod+space exec --no-startup-id "rofi -theme-str 'element-icon {{ size: 1.0em;}}' -show drun"
+bindsym $mod+space exec --no-startup-id ~/.local/bin/launch-launcher rofi drun
+bindsym $mod+Ctrl+space exec --no-startup-id ~/.local/bin/launch-launcher rofi search-mode
+bindsym $mod+Shift+e exec --no-startup-id ~/.local/bin/launch-launcher rofi power
+#bindsym $mod+d exec --no-startup-id dmenu_recency
+#bindsym $mod+m exec --no-startup-id morc_menu
+#bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 
 # TODO: review this section
 #bindsym --release Print exec screenshot_full
@@ -55,12 +58,29 @@ bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
 bindsym Print exec --no-startup-id i3-scrot
 bindsym Shift+Print --release exec --no-startup-id i3-scrot -s
 
+# Audio
+bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/mixer output mute 
+bindsym XF86AudioMicMute exec --no-startup-id ~/.local/bin/mixer mic mute 
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/mixer output down 
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/mixer output up
+
+# state 0x0, keycode 122 (keysym 0x1008ff11, XF86AudioLowerVolume), same_screen YES,
+# state 0x0, keycode 123 (keysym 0x1008ff13, XF86AudioRaiseVolume), same_screen YES,
+# state 0x0, keycode 198 (keysym 0x1008ffb2, XF86AudioMicMute), same_screen YES,
+# state 0x0, keycode 232 (keysym 0x1008ff03, XF86MonBrightnessDown), same_screen YES,
+# state 0x0, keycode 233 (keysym 0x1008ff02, XF86MonBrightnessUp), same_screen YES,
+# state 0x0, keycode 235 (keysym 0x1008ff59, XF86Display), same_screen YES,
+# state 0x0, keycode 246 (keysym 0x1008ff95, XF86WLAN), same_screen YES,
+# state 0x0, keycode 246 (keysym 0x1008ff95, XF86WLAN), same_screen YES,
+# state 0x0, keycode 164 (keysym 0x1008ff30, XF86Favorites), same_screen YES,
+
 
 # Window focus
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 bindsym $mod+Down focus down
 bindsym $mod+Left focus left
+focus_on_window_activation smart
 
 # Window movement
 bindsym $mod+Shift+Up move up
@@ -122,11 +142,16 @@ bindsym $mod+Shift+agrave move container to workspace $w0
 
 # Use get_i3_window_name
 # Assign applications on specific workspaces
-assign [class="Google-chrome"] $w6
+assign [class="Google-chrome"] $w7
+assign [class="code-oss"] $w9
+assign [class="discord"] $w3
 
 # Use get_i3_window_name
 # Open specific applications in floating mode
+for_window [title="app launcher"] floating enable border full
 for_window [title="alsamixer"] floating enable border pixel $border
+for_window [title="pulsemixer"] floating enable border pixel $border
+
 
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
@@ -157,21 +182,21 @@ for_window [class="Xfburn"] floating enable
 #for_window [urgent=latest] focus
 
 # Set shut down, restart and locking features
-bindsym $mod+Shift+e mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
-mode "$mode_system" {{
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}}
+# bindsym $mod+Shift+e mode "$mode_system"
+# set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+# mode "$mode_system" {{
+#     bindsym l exec --no-startup-id i3exit lock, mode "default"
+#     bindsym s exec --no-startup-id i3exit suspend, mode "default"
+#     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+#     bindsym e exec --no-startup-id i3exit logout, mode "default"
+#     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+#     bindsym r exec --no-startup-id i3exit reboot, mode "default"
+#     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+# 
+#     # exit system mode: "Enter" or "Escape"
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+# }}
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"

@@ -5,4 +5,20 @@
 !.config/gnupg/sshcontrol
 
 .config/zinit
+
 .cache
+.config/Code - OSS/CachedData
+
+.config/Code - OSS
+
+Images 
+
+.config/discord      
+
+.config/google-chrome
+
+.local/share
+.cargo
+.kube
+
+.cert
