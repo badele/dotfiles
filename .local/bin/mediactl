@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+case $1 in
+    play-pause)
+        playerctl play-pause
+        ;;
+    other)
+        echo "other"
+        ;;
+esac
