@@ -113,6 +113,9 @@ zinit ice as"completion"
 zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
 
 zinit ice as"completion"
+zinit snippet OMZ::plugins/helm/helm.plugin.zsh
+
+zinit ice as"completion"
 zinit snippet OMZ::plugins/pass/_pass
 
 
