@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# take a neofetch screenshot
+termite -t neolock -e 'bash -c "neofetch --song_shorthand on --source ~/Images/ ; scrot -d0 -zumos /tmp/neolock.png; kill $!"' 
+
+# take a desktop screenshot
+import -silent -window root /tmp/screenshot.png
+
+# blur it and merge with neofetch results
+convert /tmp/screenshot.png -blur 0x5 -set colorspace Gray -separate -average /tmp/blurred.png
+convert /tmp/blurred.png /tmp/neolock.png -set colorspace RGB -gravity center -composite -matte /tmp/blurred.png
+
+# screen lock
+i3lock -i /tmp/blurred.png
+
+# remove temp files
+rm /tmp/screenshot.png
+rm /tmp/neolock.png
