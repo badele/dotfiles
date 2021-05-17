@@ -35,35 +35,38 @@ gaps outer $gaps_outer
 # || Super+Return || Launch new terminal | i3
 # || Super+Shift+r || Restart i3 | i3
 # || Super+q || Kill a window | i3
+# || Super+k || Show where is rocky | i3
 bindsym $mod+Return exec $terminal 
 bindsym $mod+Shift+r restart; exec notify-send 'i3 restarted' 
 bindsym $mod+q kill 
 bindsym $mod+k --release exec --no-startup-id //home/badele/private/projects/rokeys/rokeys
 
 # Lock screen
+# || Super+l || Blurred screen lock | i3
+# || Super+Ctrl+l || Screen lock with realtime output | i3
 bindsym $mod+l exec $i3lock
 bindsym $mod+$ctrl+l exec xtrlock
 
 
 # launch menu
-# || key super+space || Show rofi launcher | i3
+# || Super+Space || Show rofi launcher | i3
+# || Super+Ctrl+Space || Search rofi mode | i3
+# || Super+Shift+e || Power and exit menu | i3
 bindsym $mod+space exec --no-startup-id ~/.local/bin/launch-launcher rofi drun
 bindsym $mod+Ctrl+space exec --no-startup-id ~/.local/bin/launch-launcher rofi search-mode
 bindsym $mod+Shift+e exec --no-startup-id ~/.local/bin/launch-launcher rofi power
-#bindsym $mod+d exec --no-startup-id dmenu_recency
-#bindsym $mod+m exec --no-startup-id morc_menu
-#bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
-
-# TODO: review this section
-#bindsym --release Print exec screenshot_full
-#bindsym --release Shift+Print exec screenshot_selection
 
 # Screenshot
+# || Print || Take a desktop screenshot | i3
+# || Shift+Print || Take a selection screenshot | i3
+# || Super+c || Color picker | i3
 bindsym Print exec --no-startup-id i3-scrot
 bindsym Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+c --release exec ~/.local/bin/colorpicker
 
 # Audio
+# || Super+p || Pause media player | i3
+# || Super+m || Show TUI pulseaudio mixer | i3
 bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/mixer output mute 
 bindsym XF86AudioMicMute exec --no-startup-id ~/.local/bin/mixer mic mute 
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/mixer output down 
@@ -71,18 +74,12 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/mixer output up
 bindsym $mod+p exec --no-startup-id ~/.local/bin/mediactl play-pause
 bindsym $mod+m exec --no-startup-id termite -e pulsemixer
 
-# state 0x0, keycode 122 (keysym 0x1008ff11, XF86AudioLowerVolume), same_screen YES,
-# state 0x0, keycode 123 (keysym 0x1008ff13, XF86AudioRaiseVolume), same_screen YES,
-# state 0x0, keycode 198 (keysym 0x1008ffb2, XF86AudioMicMute), same_screen YES,
-# state 0x0, keycode 232 (keysym 0x1008ff03, XF86MonBrightnessDown), same_screen YES,
-# state 0x0, keycode 233 (keysym 0x1008ff02, XF86MonBrightnessUp), same_screen YES,
-# state 0x0, keycode 235 (keysym 0x1008ff59, XF86Display), same_screen YES,
-# state 0x0, keycode 246 (keysym 0x1008ff95, XF86WLAN), same_screen YES,
-# state 0x0, keycode 246 (keysym 0x1008ff95, XF86WLAN), same_screen YES,
-# state 0x0, keycode 164 (keysym 0x1008ff30, XF86Favorites), same_screen YES,
-
+# Screen brightness controls
+# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Window focus
+# || Super+Direction || Change focus | i3
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 bindsym $mod+Down focus down
@@ -90,25 +87,29 @@ bindsym $mod+Left focus left
 focus_on_window_activation smart
 
 # Window movement
+# || Super+Shift+Direction || Move window | i3
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Left move left
 
 # Spliting
+# || Super+h || Split horizontally | i3
+# || Super+v || Split vertically | i3
 bindsym $mod+h split h;exec notify-send 'split horizontally'
 bindsym $mod+v split v;exec notify-send 'split vertically'
 
 # floating and fullscreen
+# || Super+Shift+Space || Float toggle window | i3
+# || Super+s || Sticky toggle window | i3
+# || Super+f|| Fullscreen window | i3
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+s sticky toggle
 bindsym $mod+f fullscreen
 
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
-
 # Workspaces navigation
+# || Super+Ctrl+Left || Previous workspace | i3
+# || Super+Ctrl+Right || Next workspace| i3
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
@@ -124,6 +125,7 @@ set $w9 "9:  DEV"
 set $w0 "0:  TERM"
 
 # Switch to workspace
+# || Super+[0-9] || Select workspace | i3
 bindsym $mod+ampersand workspace $w1
 bindsym $mod+eacute workspace $w2
 bindsym $mod+quotedbl workspace $w3
@@ -136,6 +138,7 @@ bindsym $mod+ccedilla workspace $w9
 bindsym $mod+agrave workspace  $w0
 
 # Move focused container to workspace
+# || Super+Shift+[0-9] || Move focused to another workspace | i3
 bindsym $mod+Shift+ampersand move container to workspace  $w1
 bindsym $mod+Shift+eacute move container to workspace  $w2
 bindsym $mod+Shift+quotedbl move container to workspace  $w3
@@ -209,6 +212,7 @@ for_window [class="Xfburn"] floating enable
 # }}
 
 # Resize window (you can also use the mouse for that)
+# || Super+r || Resize window | i3
 bindsym $mod+r mode "resize"
 mode "resize" {{
         bindsym Left resize shrink width 30px or 10ppt
@@ -241,38 +245,6 @@ exec --no-startup-id clipit
 exec --no-startup-id xautolock -time 10 -locker $i3lock
 #exec_always --no-startup-id ff-theme-util
 #exec_always --no-startup-id fix_xcursor
-
-
-# Color palette used for the terminal ( ~/.Xresources file )
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your terminal like this:
-# [example]
-# If you want your bar to have the same background color as your
-# terminal background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
-# set_from_resource $term_background background
-# set_from_resource $term_foreground foreground
-# set_from_resource $term_color0     color0
-# set_from_resource $term_color1     color1
-# set_from_resource $term_color2     color2
-# set_from_resource $term_color3     color3
-# set_from_resource $term_color4     color4
-# set_from_resource $term_color5     color5
-# set_from_resource $term_color6     color6
-# set_from_resource $term_color7     color7
-# set_from_resource $term_color8     color8
-# set_from_resource $term_color9     color9
-# set_from_resource $term_color10    color10
-# set_from_resource $term_color11    color11
-# set_from_resource $term_color12    color12
-# set_from_resource $term_color13    color13
-# set_from_resource $term_color14    color14
-# set_from_resource $term_color15    color15
 
 default_border pixel $border
 for_window [class=".*"] border pixel $border
