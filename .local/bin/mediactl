@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+PLAYER="spotify"
+
 case $1 in
     play-pause)
-        playerctl play-pause
+        playerctl -p "$PLAYER" play-pause
         ;;
     other)
         echo "other"
