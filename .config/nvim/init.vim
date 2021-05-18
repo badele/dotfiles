@@ -30,8 +30,8 @@ Plug 'mhinz/vim-startify'
 Plug 'Shougo/vimproc.vim'
 
 " Leadguide
-" <SPACE> in normal mode
-Plug 'hecal3/vim-leader-guide'
+" Plug 'hecal3/vim-leader-guide'
+Plug 'liuchengxu/vim-which-key'
 
 " Detect root project directory
 Plug 'airblade/vim-rooter'
@@ -229,6 +229,9 @@ highlight! link SignColumn DiffText
 highlight! link GitGutterAdd DiffAdd
 highlight! link GitGutterChange DiffChange
 highlight! link GitGutterDelete DiffDelete
+
+highlight Pmenu ctermbg=233 ctermfg=1
+highlight PmenuSel ctermbg=1 ctermfg=None
 
 
 augroup colors
