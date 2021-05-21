@@ -1,0 +1,140 @@
+wtf:
+  colors:
+    background: black
+    border:
+      focusable: darkslateblue
+      focused: orange
+      normal: gray
+    checked: yellow
+    highlight: 
+      fore: black
+      back: gray
+    rows:
+      even: yellow
+      odd: white
+  refreshInterval: 1
+  openFileUtil: "open"
+  mods:
+    digitalclock:
+      color: red
+      enabled: true
+      font: digitalfont
+      hourFormat: 24
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 1
+      title: "Clock"
+      type: "digitalclock"
+    world_time:
+      title: "World Time"
+      type: clocks
+      colors:
+        rows:
+          even: "lightblue"
+          odd: "white"
+      enabled: true
+      locations:
+        # From https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+        - New York: "America/New York"
+        - Montreal: "America/Montreal"
+        - UTC: "Etc/UTC"
+        - Montpellier: "Europe/Paris"
+        - Dubai: "Asia/Dubai"
+        - Pekin: "Asia/Shanghai"
+      position:
+        top: 0
+        left: 1
+        height: 1
+        width: 1
+      refreshInterval: 15
+      sort: "natural"
+    battery:
+      type: power
+      title: "Battery"
+      enabled: true
+      position:
+        top: 0
+        left: 4
+        height: 1
+        width: 1
+      refreshInterval: 15
+    todolist:
+      type: todo
+      checkedIcon: "X"
+      colors:
+        checked: blue
+        highlight:
+          fore: "black"
+          back: "orange"
+      enabled: true
+      filename: "todo.yml"
+      position:
+        top: 1
+        left: 1
+        height: 1
+        width: 4
+      refreshInterval: 3600
+    ip:
+      type: ipinfo
+      title: "Local informations"
+      colors:
+        name: "lightblue"
+        value: "white"
+      enabled: true
+      position:
+        top: 0
+        left: 3
+        height: 1
+        width: 1
+      refreshInterval: 150
+    prettyweather:
+      title: Weather
+      enabled: true
+      city: "MPL"
+      position:
+        top: 0
+        left: 2
+        height: 1
+        width: 1
+      refreshInterval: 300
+      unit: "m"
+      view: 0
+      language: "fr"
+    resourceusage:
+      title: Resources Utilization
+      cpuCombined: false
+      enabled: true
+      position:
+        top: 1
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 1
+      showCPU: true
+      showMem: true
+      showSwp: true      
+    cmdrunner:
+      title: Disk usage
+      cmd: "df"
+      args: ["-h"]
+      enabled: true
+      position:
+        top: 2
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 30      
+    cmdrunner:
+      title: Logs
+      cmd: "journalctl"
+      args: ["-r", "-n", "10"]
+      enabled: true
+      position:
+        top: 2
+        left: 1
+        height: 1
+        width: 4
+      refreshInterval: 30      
