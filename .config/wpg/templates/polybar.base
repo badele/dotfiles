@@ -31,6 +31,8 @@ locale = fr_FR.UTF-8
 [bar/top]
 monitor = ${{env:MONITOR:}}
 
+wm-restack = i3
+
 inherit = global_options
 
 # Separator
@@ -68,6 +70,8 @@ tray-scale = 1.0
 
 [module/i3]
 type = internal/i3
+
+index-sort = true
 
 ; 
 
@@ -288,7 +292,7 @@ label-full-padding    = 1
 [module/music]
 type = custom/script
 
-format-foreground = {color7}
+format-foreground = {color6}
 
 
 exec = ~/.local/bin/player-status
