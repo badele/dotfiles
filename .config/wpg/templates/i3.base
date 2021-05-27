@@ -151,6 +151,19 @@ bindsym $mod+Shift+underscore move container to workspace $w8
 bindsym $mod+Shift+ccedilla move container to workspace $w9
 bindsym $mod+Shift+agrave move container to workspace $w0
 
+# || Super+w || Move workspace to monitor | i3
+bindsym $mod+w mode "move workspace"
+mode "move workspace" {{
+        bindsym Left move workspace to output left
+        bindsym Down move workspace to output down
+        bindsym Up move workspace to output up
+        bindsym Right move workspace to output right
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}}
+
 # Use get_i3_window_name
 # Assign applications on specific workspaces
 for_window [class="Google-chrome"] $w7
