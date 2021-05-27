@@ -1,0 +1,6 @@
+gtk-theme-name = "Adwaita-dark"
+style "user-font"
+{
+	font_name="DejaVu Sans 11"
+}
+widget_class "*" style "user-font"
