@@ -62,17 +62,13 @@ zinit ice wait lucid
 zinit snippet OMZP::systemd
 
 # Taskwarrior
-# yay -S taskwarrior-tui
+# yay -S task
 zinit ice wait lucid
 zinit snippet OMZP::taskwarrior
 
 # Prepend sudo when pressing esc
 zinit ice wait lucid
 zinit light hcgraf/zsh-sudo
-
-# Tracks your most used directories, based on 'frecency'.
-zinit ice wait blockf lucid
-zinit light rupa/z
 
 # autopair brackets etc
 zinit ice wait'1' lucid
