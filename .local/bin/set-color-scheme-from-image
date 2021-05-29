@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+IMAGES="$HOME/wallpapers"
+
 set -x
 
 # Check if dunst running
@@ -17,9 +19,9 @@ else
     CURRENT=$(wpg -c)
 
     if [ "$CURRENT" != ".current" ]; then
-        IMG=~/Images/$CURRENT
+        IMG=${IMAGES}/$CURRENT
     else
-        IMG=~/Images/default_square_tokkoro.jpg
+        IMG=${IMAGES}/default.jpg
 
         wpg -a $IMG
         wpg -A $IMG
@@ -32,6 +34,6 @@ wpg -A ${IMG}
 
 # Select theme
 wpg -s ${IMG} | grep -v 'icons - base file does not exist' | grep '\[e\]' && $NOTIFY -u critical "Error ${IMG} theme selelection" || $NOTIFY "${IMG} colorscheme selected"
-feh --bg-center ~/Images/$(wpg -c)
+feh --bg-center ${IMAGES}/$(wpg -c)
 
-rm -f ~/Images/*colorz_sample.png
+rm -f ${IMAGES}/*_sample.png

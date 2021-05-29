@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # take a neofetch screenshot
-termite -t neolock -e 'bash -c "neofetch --song_shorthand on --source ~/Images/ ; scrot -d0 -zumos /tmp/neolock.png; kill $!"' 
+termite -t neolock -e 'bash -c "neofetch --song_shorthand on --source ~/wallpapers ; scrot -d0 -zumos /tmp/neolock.png; kill $!"' 
 
 # take a desktop screenshot
 import -silent -window root /tmp/screenshot.png

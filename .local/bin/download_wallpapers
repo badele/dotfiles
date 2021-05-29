@@ -3,7 +3,7 @@
 # Get max monitors resolution
 maxres=$(xrandr | grep '*' | sort -n | tail -1 | awk '{ print $1 }')
 
-FOLDER="$HOME/Images"
+FOLDER="$HOME/wallpapers"
 if [ "$1" != "" ]; then
   FOLDER=$1
 fi
@@ -25,6 +25,105 @@ function wresize() {
     fi
 }
 
+# Best contrast
+wresize "https://wallpaperaccess.com/download/4k-minimalist-99815" default.jpg
+wresize "https://wallpaperaccess.com/download/4k-minimalist-203518" minimalist-1.jpg
+#wresize "https://wallpaperaccess.com/download/4k-minimalist-178348" minimalist-2.jpg
+#wresize "https://wallpaperaccess.com/download/4k-minimalist-203526" minimalist-4.jpg
+wresize "https://wallpaperaccess.com/download/4k-minimalist-42277" minimalist-5.jpg 
+#wresize "https://wallpaperaccess.com/download/4k-minimalist-21635" minimalist-6.jpg
+#wresize "https://wallpaperaccess.com/download/4k-minimalist-25580" minimalist-7.jpg
+wresize "https://wallpaperaccess.com/download/4k-minimalist-203545" minimalist-8.jpg
+wresize "https://wallpaperaccess.com/download/4k-minimalist-203549" minimalist-9.jpg
+#wresize "https://wallpaperaccess.com/download/4k-minimalist-203560" minimalist-10.jpg
+#wresize "https://wallpaperaccess.com/download/4k-minimalist-203564" minimalist-11.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-colorful-837257"  minimalist-12.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-colorful-837258" minimalist-13.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-colorful-837259" minimalist-14.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-colorful-450552" minimalist-15.jpg
+#wresize "https://wallpaperaccess.com/download/minimalist-colorful-837261" minimalist-16.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-colorful-837262" minimalist-17.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-colorful-837263" minimalist-18.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-colorful-837265" minimalist-19.jpg
+#wresize "https://wallpaperaccess.com/download/minimalist-colorful-388261" minimalist-20.jpg
+#wresize "https://wallpaperaccess.com/download/minimalist-colorful-837271" minimalist-21.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-colorful-837275" minimalist-22.jpg
+#wresize "https://wallpaperaccess.com/download/minimalist-colorful-837277" minimalist-23.jpg
+#wresize "https://wallpaperaccess.com/download/minimalist-colorful-837278" minimalist-24.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-colorful-30697" minimalist-25.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-art-498475" minimalist-26.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-art-498483" minimalist-27.jpg
+#wresize "https://wallpaperaccess.com/download/minimalist-art-287898" minimalist-28.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-art-498515" minimalist-29.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-art-498519" minimalist-30.jpg
+#wresize "https://wallpaperaccess.com/download/minimalist-art-498521" minimalist-31.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-desktop-521004" minimalist-31.jpg
+wresize "https://wallpaperaccess.com/download/minimalist-desktop-521005" minimalist-32.jpg
+
+wresize "https://wallpaperaccess.com/download/tumblr-desktop-560815" tumblr-desktop-1.jpg 
+wresize "https://wallpaperaccess.com/download/tumblr-desktop-560838" tumblr-desktop-2.jpg
+#wresize "https://wallpaperaccess.com/download/cool-desktop-7314" cool-desktop-1.jpg
+#wresize "https://wallpaperaccess.com/download/cool-desktop-7315" cool-desktop-2.jpg
+#wresize "https://wallpaperaccess.com/download/cool-desktop-7319" cool-desktop-3.jpg
+#wresize "https://wallpaperaccess.com/download/cool-desktop-7322" cool-desktop-4.jpg
+wresize "https://wallpaperaccess.com/download/cool-desktop-7323" cool-desktop-5.jpg
+#wresize "https://wallpaperaccess.com/download/cool-desktop-7330" cool-desktop-6.jpg
+#wresize "https://wallpaperaccess.com/download/cool-desktop-7331" cool-desktop-7.jpg
+wresize "https://wallpaperaccess.com/download/cool-desktop-7333" cool-desktop-8.jpg
+#wresize "https://wallpaperaccess.com/download/cool-desktop-7334" cool-desktop-9.jpg
+#wresize "https://wallpaperaccess.com/download/cool-desktop-7336" cool-desktop-10.jpg
+wresize "https://wallpaperaccess.com/download/cool-desktop-7344" cool-desktop-11.jpg
+wresize "https://wallpaperaccess.com/download/cool-desktop-7349" cool-desktop-12.jpg
+wresize "https://wallpaperaccess.com/download/vintage-desktop-156329" vintage-desktop-1.jpg
+wresize "https://wallpaperaccess.com/download/vintage-desktop-97447" vintage-desktop-2.jpg
+wresize "https://wallpaperaccess.com/download/vintage-desktop-468531" vintage-desktop-3.jpg
+#wresize "https://wallpaperaccess.com/download/vintage-desktop-553166" vintage-desktop-4.jpg
+wresize "https://wallpaperaccess.com/download/vintage-desktop-553184" vintage-desktop-5.jpg
+#wresize "https://wallpaperaccess.com/download/vintage-desktop-553201" vintage-desktop-6.jpg
+wresize "https://wallpaperaccess.com/download/vintage-desktop-532469" vintage-desktop-7.jpg
+wresize "https://wallpaperaccess.com/download/vintage-desktop-553245" vintage-desktop-8.jpg
+wresize "https://wallpaperaccess.com/download/vintage-desktop-553249" vintage-desktop-9.jpg
+wresize "https://wallpaperaccess.com/download/girly-desktop-131865" girly-desktop-1.jpg
+#wresize "https://wallpaperaccess.com/download/colorful-desktop-160575" colorful-desktop-1.jpg
+wresize "https://wallpaperaccess.com/download/colorful-desktop-454210" colorful-desktop-2.jpg
+wresize "https://wallpaperaccess.com/download/colorful-desktop-280922" colorful-desktop-3.jpg
+wresize "https://wallpaperaccess.com/download/colorful-desktop-160586" colorful-desktop-4.jpg
+#wresize "https://wallpaperaccess.com/download/colorful-desktop-454238" colorful-desktop-5.jpg
+wresize "https://wallpaperaccess.com/download/colorful-desktop-454250" colorful-desktop-6.jpg
+wresize "https://wallpaperaccess.com/download/colorful-desktop-454251" colorful-desktop-7.jpg
+wresize "https://wallpaperaccess.com/download/colorful-desktop-454287" colorful-desktop-8.jpg
+#wresize "https://wallpaperaccess.com/download/colorful-desktop-454377" colorful-desktop-9.jpg
+wresize "https://wallpaperaccess.com/download/colorful-desktop-454383" colorful-desktop-10.jpg
+wresize "https://wallpaperaccess.com/download/colorful-desktop-454411" colorful-desktop-11.jpg
+#wresize "https://wallpaperaccess.com/download/colorful-desktop-454440" colorful-desktop-12.jpg
+#wresize "https://wallpaperaccess.com/download/retro-game-242332" retro-game-1.jpg
+wresize "https://wallpaperaccess.com/download/retro-game-242333" retro-game-2.jpg
+wresize "https://wallpaperaccess.com/download/retro-game-242343" retro-game-3.jpg
+wresize "https://wallpaperaccess.com/download/retro-game-242347" retro-game-4.jpg
+wresize "https://wallpaperaccess.com/download/retro-game-242359" retro-game-5.jpg
+wresize "https://wallpaperaccess.com/download/retro-game-242360" retro-game-6.jpg
+wresize "https://wallpaperaccess.com/download/retro-game-242366" retro-game-7.jpg
+wresize "https://wallpaperaccess.com/download/retro-game-242386" retro-game-8.jpg
+#wresize "https://wallpaperaccess.com/download/retro-game-242414" retro-game-9.jpg
+wresize "https://wallpaperaccess.com/download/retro-game-242417" retro-game-10.jpg
+#wresize "https://wallpaperaccess.com/download/8-bit-556530" bits-1.jpg
+wresize "https://wallpaperaccess.com/download/8-bit-556538" bits-2.jpg
+#wresize "https://wallpaperaccess.com/download/8-bit-556546" bits-3.jpg
+wresize "https://wallpaperaccess.com/download/8-bit-556554" bits-4.jpg
+wresize "https://wallpaperaccess.com/download/32-bit-1776239" bits-5.jpg
+#wresize "https://wallpaperaccess.com/download/64-bit-2638139" bits-6.jpg
+wresize "https://wallpaperaccess.com/download/64-bit-1270087" bits-7.jpg
+
+# Set themes
+wpg -a $FOLDER/*
+wpg -A $FOLDER/*
+
+# Select random scheme
+set-color-scheme-from-image
+
+exit 0
+
+# Old wallpapers
 wresize "https://i.redd.it/fang0g4ohin61.jpg" "solar_system.jpg"
 wresize "https://static.pexels.com/photos/417014/pexels-photo-417014.jpeg" escalator1_pexels.jpg
 wresize "https://static.pexels.com/photos/540518/pexels-photo-540518.jpeg" mountain1_pexels.jpg
@@ -91,9 +190,3 @@ wresize "https://www.wallpaperup.com/uploads/wallpapers/2015/06/12/720367/d7ad5c
 wresize "http://www.tokkoro.com/picsup/2743825-colors-4k-wallpaper-hd-background.jpg" blur7_tokkoro.jpg
 wresize "http://www.tokkoro.com/picsup/2618072-minimalism-4k-windows-wallpaper-download.jpg" abstract2_tokkoro.jpg
 
-# Set themes
-wpg -a $FOLDER/*
-wpg -A $FOLDER/*
-
-# Select random scheme
-set-color-scheme-from-image
