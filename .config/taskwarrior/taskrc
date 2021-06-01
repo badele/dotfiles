@@ -12,18 +12,91 @@
 data.location=~/.task
 
 # Color theme (uncomment one to use)
-#include /usr/share/doc/task/rc/light-16.theme
-#include /usr/share/doc/task/rc/light-256.theme
-#include /usr/share/doc/task/rc/dark-16.theme
-#include /usr/share/doc/task/rc/dark-256.theme
-#include /usr/share/doc/task/rc/dark-red-256.theme
-#include /usr/share/doc/task/rc/dark-green-256.theme
-#include /usr/share/doc/task/rc/dark-blue-256.theme
-#include /usr/share/doc/task/rc/dark-violets-256.theme
-#include /usr/share/doc/task/rc/dark-yellow-green.theme
-#include /usr/share/doc/task/rc/dark-gray-256.theme
-#include /usr/share/doc/task/rc/dark-gray-blue-256.theme
-#include /usr/share/doc/task/rc/solarized-dark-256.theme
-#include /usr/share/doc/task/rc/solarized-light-256.theme
-#include /usr/share/doc/task/rc/no-color.theme
 
+# General decoration
+color.label=
+color.label.sort=
+color.alternate=
+color.header=yellow
+color.footnote=yellow
+color.warning=bold red
+color.error=white on red
+color.debug=blue
+
+# Task state
+color.completed=green
+color.deleted=
+color.active=black on bright green
+color.recurring=magenta
+color.scheduled=white on green
+color.until=
+#color.blocked=black on white
+color.blocked=black on bright red
+color.blocking=red
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.H=bold white
+color.uda.priority.M=white
+color.uda.priority.L=
+
+# Tags
+color.tag.next=bold yellow
+color.tag.none=
+color.tagged=
+
+# Due
+color.due=red
+color.due.today=red
+color.overdue=bold red
+
+# UDA
+#color.uda.X=
+
+# Report: burndown
+color.burndown.done=on green
+color.burndown.pending=on red
+color.burndown.started=on green
+
+# Report: history
+color.history.add=black on red
+color.history.delete=black on yellow
+color.history.done=black on green
+
+# Report: summary
+color.summary.background=white on black
+color.summary.bar=black on green
+
+# Command: calendar
+color.calendar.due=white on red
+color.calendar.due.today=bold white on red
+color.calendar.holiday=black on bright yellow
+color.calendar.overdue=black on bright red
+color.calendar.today=bold white on bright blue
+color.calendar.weekend=white on bright black
+color.calendar.weeknumber=bold blue
+
+# Command: sync
+color.sync.added=green
+color.sync.changed=yellow
+color.sync.rejected=red
+
+# Command: undo
+color.undo.after=green
+color.undo.before=red
+uda.totalactivetime.type=duration
+uda.totalactivetime.label=Total active time
+uda.totalactivetime.values=
+
+# taskwarrior-time-tracking-hook
+max_active_tasks=10
+
+# Report next
+report.next.labels=ID,Active,Age,Duration,D,P,Project,Tags,R,Sch,Due,Until,Description,Urg
+report.next.columns=id,start.age,entry.age,totalactivetime,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due,until.remaining,description.count,urgency
+
+# Report list
+report.list.labels=ID,Active,Age,Duration,D,P,Project,Tags,R,Sch,Due,Until,Description,Urg
+report.list.columns=id,start.age,entry.age,totalactivetime,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due,until.remaining,description.count,urgency
