@@ -4,20 +4,44 @@
 !.config/gnupg/gpg-agent.conf
 !.config/gnupg/sshcontrol
 
+# wpg
+.config/i3/config
+.config/polybar/config
+.config/termite/config
+.config/dunst/dunstrc
+
+# SSH
 .config/zinit
 
+# Cache
 .cache
-.config/Code - OSS/CachedData
 
-.config/Code - OSS
+# Code
+.config/Code
+.vscode
 
-Images 
+# Personal folders
+.histfile
+.ssh
+.tsh
+tmp
+Images
+Pictures
+work
+private
+Téléchargements
+
+# taskwarrior
+.task/*.data
 
 .config/discord      
 
 .config/google-chrome
 
+# Local
 .local/share
+.local/lib
+
 .cargo
 .kube
 
