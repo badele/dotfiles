@@ -8,6 +8,8 @@
 
 alias ll="ls -alh"
 alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
 alias gp="git push"
 alias zs="zinit zstatus"
 alias cdw='cd $WORK'
@@ -25,10 +27,6 @@ alias a=aws
 alias g=gcloud
 alias k=kubectl
 alias h=helm
-
-# alias colorpal="wpg --preview"
-# alias colorpal="msgcat --color=test"
-alias colortest='cat $HOME/.config/color_palete/colors_palete.ansi'
 
 alias vim=nvim
 

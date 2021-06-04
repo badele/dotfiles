@@ -22,12 +22,13 @@ alias ccat="highlight --out-format=ansi" # Color it
 
 
 ## Colors | https://wiki.archlinux.org/index.php/Color_output_in_console
-#alias diff='diff --color=always'
-alias ls='ls --color=always'
-#alias grep='grep --color=always'
-#alias fgrep='fgrep --color=always'
-#alias egrep='egrep --color=always'
-alias ip='ip -color=always'
+#alias diff='diff --color=auto'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias ip='ip -color=auto'
+
+# Grep
+export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36"
 
 # Less
 export LESS_TERMCAP_mb=$(printf "\e[1;31m")

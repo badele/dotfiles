@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# wpg --preview
+# msgcat --color=test
+
+tpal art pacman
+tpal art spaceinvaders
+tpal art yinyang
+tpal minimat
+#tpal brightness
+tpal rainbow
+
+cat $HOME/.config/color_palete/colors_palete.ansi
