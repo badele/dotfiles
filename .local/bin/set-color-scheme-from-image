@@ -34,6 +34,9 @@ wpg -A ${IMG}
 
 # Select theme
 wpg -s ${IMG} | grep -v 'icons - base file does not exist' | grep '\[e\]' && $NOTIFY -u critical "Error ${IMG} theme selelection" || $NOTIFY "${IMG} colorscheme selected"
+#launch-polybar
+
+# Change some resources
 feh --bg-center ${IMAGES}/$(wpg -c)
 
 rm -f ${IMAGES}/*_sample.png

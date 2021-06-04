@@ -19,7 +19,8 @@ set $i3lock ~/.local/bin/lock-computer
 set $border 1
 set $gaps_inner 10
 set $gaps_outer 10
-set $gaps_top 45
+set $gaps_top 30
+set $gaps_bottom 30
 
 # Window parameters
 font xft:Source Code Pro 11
@@ -281,3 +282,4 @@ client.background       {color15}
 gaps outer $gaps_outer
 gaps inner $gaps_inner
 gaps top $gaps_top
+gaps bottom $gaps_bottom

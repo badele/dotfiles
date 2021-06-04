@@ -1,50 +1,47 @@
-;
-; ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-; ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-; ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-; ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-; ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-; ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-; Generated with wpg template, apply with `wpg -s $(wpg -c)`
+#
+# ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+# ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+# ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+# ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+# ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+# ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+# Generated with wpg template, apply with `wpg -s $(wpg -c)`
 
 [global_options]
-; Fonts (search order)
+# Fonts (search order)
 font-0 = Source Code Pro:size=8;3
 font-1 = NotoSansMono Nerd Font:size=8;3
 dpi=135
 
-; Default options
+# Default options
 override-redirect = true
 enable-ipc = false
 
-; Colors
-background = {color0}
+# Colors
+background = #00000000 
 foreground = {color15}
 
-; Line size
+# Line size
 line-size = 2
 
-; Locale
+# Separator
+separator = ""
+separator-padding = 5
+separator-foreground = {color15}
+
+# Locale
 locale = fr_FR.UTF-8
 
 
 [bar/top]
 monitor = ${{env:MONITOR:}}
-
-wm-restack = i3
+bottom = false
 
 inherit = global_options
 
-# Separator
-separator = "|"
-separator-padding = 1
-separator-foreground = {color1}
+wm-restack = i3
 
-# Colors
-background = {color0}
-
-; Position
-bottom = false
+# Position
 fixed-center = true
 height = 32
 width = 100%
@@ -53,38 +50,71 @@ offset-y = 0
 module-padding = 0
 module-margin = 0
 
-; Module
-modules-left =  i3 music
-modules-center =
-modules-right = cpu memory backlight vol battery date
+# Module
+modules-left = powermenu 
+modules-center = music
+modules-right = vol backlight battery wireless date
 
-; Tray
-tray-position = right
-tray-detached = false
-tray-maxsize = 16
-tray-offset-x = 0
-tray-offset-y = 0
-tray-background = {color0}
-tray-padding = 0
-tray-scale = 1.0
+# Tray
+#tray-position = right
+#tray-detached = false
+#tray-maxsize = 16
+#tray-offset-x = 0
+#tray-offset-y = 0
+#tray-background = {color0}
+#tray-padding = 0
+#tray-scale = 1.0
+
+[bar/bottom]
+monitor = ${{env:MONITOR:}}
+bottom = true
+
+inherit = global_options
+
+wm-restack = i3
+
+# Position
+fixed-center = true
+height = 32
+width = 100%
+offset-x = 0
+offset-y = 0
+module-padding = 0
+module-margin = 0
+
+# Module
+modules-left =  i3
+modules-center =
+modules-right = cpu memory
+
+# Tray
+#tray-position = right
+#tray-detached = false
+#tray-maxsize = 16
+#tray-offset-x = 0
+#tray-offset-y = 0
+#tray-background = {color0}
+#tray-padding = 0
+#tray-scale = 1.0
+
 
 [module/i3]
 type = internal/i3
 
 index-sort = true
 
-; 
+# 
 
-; ws-icon-0 = 0;
-; ws-icon-1 = 1;
-; ws-icon-2 = 2;
-; ws-icon-3 = 3;
-; ws-icon-4 = 4;
-; ws-icon-5 = 5;
-; ws-icon-6 = 6;
-; ws-icon-7 = 7;
-; ws-icon-8 = 8;
-; ws-icon-9 = 9;
+# ws-icon-0 = 0;
+# ws-icon-1 = 1;
+# ws-icon-2 = 2;
+# ws-icon-3 = 3;
+# ws-icon-4 = 4;
+# ws-icon-5 = 5;
+# ws-icon-6 = 6;
+# ws-icon-7 = 7;
+# ws-icon-8 = 8;
+# ws-icon-9 = 9;
 
 
 label-unfocused = %name%
@@ -93,14 +123,14 @@ label-unfocused-foreground = {color7}
 
 
 label-focused = %name%
-;label-focused-background = {color0}
+#label-focused-background = {color0}
 label-focused-foreground = {color7}
 label-focused-padding = 1
 label-focused-underline = {color9}
 
 label-mode = %mode%
-;label-mode-background = {color0}
-;label-mode-foreground = {color15}
+#label-mode-background = {color0}
+#label-mode-foreground = {color15}
 label-mode-padding = 1
 label-mode-foreground = {color7}
 
@@ -110,39 +140,40 @@ type = internal/date
 
 inherit = global_options
 
-format-background = {color0}
-format-foreground = {color1}
-format-padding = 0
-;label-font = 0
+#format-background = {color0}
+#format-foreground = {color1}
+format-padding = 2
+#label-font = 0
 label-padding = 1
 
 interval = 1.0
 
-; Normal
+# Normal
 date =
 time = "%H:%M:%S"
 
-; Alternative mode
+# Alternative mode
 date-alt = %A, %d %B %Y
 time-alt =
 
-format =  <label>
+format = <label>
 label = %date%%time%
 
-[module/wireless-network]
+[module/wireless]
 type = internal/network
 interface = wlp3s0
 
-label-connected = %essid%
-format-connected = <ramp-signal>
-label-connected-foreground = #A3BE8C
+# label-connected = %essid%
+label-connected = %{{A1:nm-connection-editor:}}%essid%%{{A}}
+format-connected = <ramp-signal> <label-connected>
+# label-connected-foreground = #A3BE8C
 
 format-disconnected = <label-disconnected>
 label-disconnected = Not connected
 label-disconnected-foreground = #C33027
 label-disconnected-background = #2E3440
 
-ramp-signal-foreground = #A3BE8C
+#ramp-signal-foreground = #A3BE8C
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
@@ -154,11 +185,14 @@ ramp-signal-5 = 
 type = internal/cpu
 
 interval = 0.5
+
+format-padding = 2
+
 format = <label> <ramp-coreload>
-label = "  %percentage%% "
+label = "  %percentage:3%% "
 
 #label-background = {color10}
-label-foreground = {color6}
+label-foreground = {color15}
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 7
@@ -194,61 +228,63 @@ type = internal/memory
 interval = 1
 format = <label>
 
+format-padding = 2
+
 label =  %percentage_used%
 
-; Available tokens:
-;   %percentage_used% (default)
-;   %percentage_free%
-;   %gb_used%
-;   %gb_free%
-;   %gb_total%
-;   %mb_used%
-;   %mb_free%
-;   %mb_total%
-;   %percentage_swap_used%
-;   %percentage_swap_free%
-;   %mb_swap_total%
-;   %mb_swap_free%
-;   %mb_swap_used%
-;   %gb_swap_total%
-;   %gb_swap_free%
-;   %gb_swap_used%
+# Available tokens:
+#   %percentage_used% (default)
+#   %percentage_free%
+#   %gb_used%
+#   %gb_free%
+#   %gb_total%
+#   %mb_used%
+#   %mb_free%
+#   %mb_total%
+#   %percentage_swap_used%
+#   %percentage_swap_free%
+#   %mb_swap_total%
+#   %mb_swap_free%
+#   %mb_swap_used%
+#   %gb_swap_total%
+#   %gb_swap_free%
+#   %gb_swap_used%
 
 
-label-foreground = {color5}
+label-foreground = {color15}
 
 [module/temperature]
 type = internal/temperature
 
-; Seconds to sleep between updates
-; Default: 1
+# Seconds to sleep between updates
+# Default: 1
 interval = 0.5
 
-; Thermal zone to use
-; To list all the zone types, run
-; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
-; Default: 0
+# Thermal zone to use
+# To list all the zone types, run
+# $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+# Default: 0
 thermal-zone = 0
 
 hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
 
-; Threshold temperature to display warning label (in degrees celsius)
-; Default: 80
+# Threshold temperature to display warning label (in degrees celsius)
+# Default: 80
 warn-temperature = 80
 
 format = <label>
 
-; Available tags:
-;   <label-warn> (default)
-;   <ramp>
+# Available tags:
+#   <label-warn> (default)
+#   <ramp>
 
-; Available tokens:
-;   %temperature% (deprecated)
-;   %temperature-c%   (default, temperature in °C)
-;   %temperature-f%   (temperature in °F)
+# Available tokens:
+#   %temperature% (deprecated)
+#   %temperature-c%   (default, temperature in °C)
+#   %temperature-f%   (temperature in °F)
 label =  %temperature-c%
 
-label-foreground = #BF616A
+label-foreground = {color15}
 
 [module/battery]
 type          = internal/battery
@@ -257,42 +293,41 @@ battery       = BAT0
 adapter       = AC0
 poll-interval = 5
 
-format-padding = 0
-format-margin = 0
+format-padding = 2
 
 format-charging =<label-charging>
 #format-charging-background = {color13}
-format-charging-foreground = {color2}
+#format-charging-foreground = {color2}
 
 label-charging            = "%percentage%%"
-; label-charging-background = {color13}
-; label-charging-foreground = {color15}
+# label-charging-background = {color13}
+# label-charging-foreground = {color15}
 label-charging-padding    = 1
 
 format-discharging =<label-discharging>
 #format-discharging-background = {color13}
-format-discharging-foreground = {color2}
+#format-discharging-foreground = {color2}
 
 
 label-discharging            = "%percentage%%"
-; label-discharging-background = {color13}
-; label-discharging-foreground = {color15}
+# label-discharging-background = {color13}
+# label-discharging-foreground = {color15}
 label-discharging-padding    = 1
 
 format-full =<label-full>
 #format-full-background = {color13}
-format-full-foreground = {color2}
+#format-full-foreground = {color2}
 
 
 label-full            = "%percentage%%"
-; label-full-background = {color13}
-; label-full-foreground = {color15}
+# label-full-background = {color13}
+# label-full-foreground = {color15}
 label-full-padding    = 1
 
 [module/music]
 type = custom/script
 
-format-foreground = {color6}
+#format-foreground = {color6}
 
 
 exec = ~/.local/bin/player-status
@@ -303,14 +338,14 @@ click-left = playerctl play-pause
 [module/vol]
 type = internal/pulseaudio
 
-;format-background = {color15}
-;format-foreground = {color0}
-;format-padding = 0
+#format-background = {color15}
+#format-foreground = {color0}
+format-padding = 2
 label-font = 0
 
 format-volume =  <label-volume>
 #format-volume-background = {color12}
-format-volume-foreground = {color3}
+#format-volume-foreground = {color3}
 format-volume-padding = 1
 
 label-volume = %percentage%%
@@ -322,7 +357,7 @@ format-muted-padding = 1
 
 label-muted = 
 
-;label-muted-background = {color0}
+#label-muted-background = {color0}
 label-muted-foreground = {color3}
 label-muted-padding = 0
 
@@ -331,7 +366,9 @@ click-right = termite -e pulsemixer
 [module/backlight]
 type = internal/backlight
 card = amdgpu_bl0
-format = <ramp> <bar>
+format =  <ramp> <bar>
+
+format-padding=2
 
 enable-scroll = true
 
@@ -342,13 +379,37 @@ ramp-2 = 
 bar-width = 10
 bar-indicator = |
 bar-indicator-font = 1
-bar-indicator-foreground = #ff
+#bar-indicator-foreground = {color15}
 bar-fill = ─
 bar-fill-font = 1
-bar-fill-foreground = #00FF00
+bar-fill-foreground = {color15}
 bar-empty = ─
 bar-empty-font = 1
-bar-empty-foreground = #000000
+bar-empty-foreground = {color8}
+
+[module/powermenu]
+type = custom/menu
+
+format-padding = 2
+
+label-open = ⏻
+label-close = ⏼
+label-separator = |
+
+menu-0-0 = Reboot
+menu-0-0-exec = menu_open-1
+menu-0-1 = Shutdown
+menu-0-1-exec = menu_open-2
+
+menu-1-0 = Cancel
+menu-1-0-exec = menu_open-0
+menu-1-1 = Reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = Shutdown
+menu-2-0-exec = poweroff
+menu-2-1 = Cancel
+menu-2-1-exec = menu_open-0
 
 # [module/decor-glyph]
 # type = custom/text
