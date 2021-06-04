@@ -8,7 +8,7 @@ metadata="$(playerctl -p "$PLAYER" metadata -f '{{title}} - {{artist}}' 2> /dev/
 if [ "$status" = "Playing" ]; then
     printf "%s" " $metadata"
 else
-    if [ $(($(date +"%S") %2 )) -eq 0 ]; then
+    if [ $(($(date +%s) %2 )) -eq 0 ]; then
         printf "%s" " $metadata"
     else
         printf "Paused"
