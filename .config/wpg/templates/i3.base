@@ -243,7 +243,7 @@ mode "resize" {{
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id picom -b -i 0.96 -I 0.05 -O 0.05
+exec --no-startup-id picom --daemon --inactive-opacity 0.96 --fade-in-step 0.05 --fade-out-step 0.05 --menu-opacity 1.0
 exec --no-startup-id $HOME/.local/bin/set-color-scheme-from-image
 exec --no-startup-id ~/.local/bin/launch-polybar
 exec --no-startup-id ~/.local/bin/launch-pulseaudio
@@ -252,7 +252,7 @@ exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
+#exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 #exec --no-startup-id start_conky_maia
