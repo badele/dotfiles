@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+BATTERY_PATH=$(upower -e | grep battery)
+LINE_POWER_PATH=$(upower -e | grep line_power)
+BATTERY_PERCENTAGE=$(upower -i $BATTERY_PATH | grep 'percentage:' | awk '{ print $2 }' | sed 's/%//')
+CABLE_PLUGGED=$(upower -i $LINE_POWER_PATH | grep -A2 'line-power' | grep online | awk '{ print $2 }')
+
+BATTERY_LIMIT=20
+
+if [[ $CABLE_PLUGGED != 'yes' ]]; then
+    if [[ $BATTERY_PERCENTAGE -lt $BATTERY_LIMIT ]]; then
+        notify-send --urgency=critical "Battery Alert" "Battery is below ${BATTERY_LIMIT}%"
+        paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
+    fi
+fi

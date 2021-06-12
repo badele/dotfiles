@@ -51,7 +51,7 @@ module-padding = 0
 module-margin = 0
 
 # Module
-modules-left = powermenu 
+modules-left = powermenu batteryalert
 modules-center = music
 modules-right = vol backlight battery wireless date
 
@@ -334,6 +334,15 @@ exec = ~/.local/bin/player-status
 interval = 1
 
 click-left = playerctl play-pause
+
+[module/batteryalert]
+type = custom/script
+
+format-foreground = {color6}
+
+exec = ~/.local/bin/battery-alert
+interval = 300
+
 
 [module/vol]
 type = internal/pulseaudio
