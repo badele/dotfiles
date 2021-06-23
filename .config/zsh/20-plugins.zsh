@@ -24,8 +24,14 @@ setopt promptsubst
 zinit ice wait lucid
 zinit snippet OMZP::autojump
 
+# asdf
+# yay -S asdf-vm
+zinit ice wait lucid
+zinit snippet OMZP::asdf
+# See loader at bottom of this file
+
 # AWS cli
-# yay -S aws-cli
+# Use asdf
 zinit ice wait lucid
 zinit snippet OMZP::aws
 
@@ -34,7 +40,7 @@ zinit ice wait lucid
 zinit snippet OMZP::command-not-found
 
 # gcloud SDK
-# yay -S google-cloud-sd
+# Use asdf
 zinit ice wait lucid
 zinit snippet OMZP::gcloud
 
@@ -112,8 +118,14 @@ zinit ice as"completion"
 zinit snippet OMZ::plugins/helm/helm.plugin.zsh
 
 zinit ice as"completion"
+zinit snippet OMZ::plugins/terraform/_terraform
+
+zinit ice as"completion"
 zinit snippet OMZ::plugins/pass/_pass
 
+
+# Load asdf tool
+. /opt/asdf-vm/asdf.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
