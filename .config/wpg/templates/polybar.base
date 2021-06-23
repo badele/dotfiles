@@ -51,7 +51,7 @@ module-padding = 0
 module-margin = 0
 
 # Module
-modules-left = powermenu batteryalert
+modules-left = powermenu notify-polybar
 modules-center = music
 modules-right = vol backlight battery wireless date
 
@@ -335,13 +335,13 @@ interval = 1
 
 click-left = playerctl play-pause
 
-[module/batteryalert]
+[module/notify-polybar]
 type = custom/script
 
-format-foreground = {color6}
+#format-foreground = {color6}
 
-exec = ~/.local/bin/battery-alert
-interval = 300
+exec = ~/.local/bin/notify-polybar
+interval = 1
 
 
 [module/vol]

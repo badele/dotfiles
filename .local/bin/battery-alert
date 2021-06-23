@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+NOTIFY=$HOME/.local/bin/notify-polybar
+
 BATTERY_PATH=$(upower -e | grep battery)
 LINE_POWER_PATH=$(upower -e | grep line_power)
 BATTERY_PERCENTAGE=$(upower -i $BATTERY_PATH | grep 'percentage:' | awk '{ print $2 }' | sed 's/%//')
@@ -7,9 +9,19 @@ CABLE_PLUGGED=$(upower -i $LINE_POWER_PATH | grep -A2 'line-power' | grep online
 
 BATTERY_LIMIT=20
 
+EXPIRY=60
+NOTIFYFILE=/tmp/notify-polybar/battery
+if [ -f "${NOTIFYFILE}" ]; then
+    if [ $(expr $(date +%s) - $(date -r "$NOTIFYFILE" +%s)) -le $EXPIRY ]; then
+        exit 0
+    fi
+fi
+
+rm -f "$NOTIFYFILE"
 if [[ $CABLE_PLUGGED != 'yes' ]]; then
     if [[ $BATTERY_PERCENTAGE -lt $BATTERY_LIMIT ]]; then
-        notify-send --urgency=critical "Battery Alert" "Battery is below ${BATTERY_LIMIT}%"
+        $NOTIFY -a battery "low battery [$BATTERY_PERCENTAGE]"
+        notify-send --urgency=critical "Battery Alert" "Battery discharging ${BATTERY_PERCENTAGE}%"
         paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
     fi
 fi

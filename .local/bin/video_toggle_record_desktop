@@ -1,0 +1,21 @@
+#!/bin/bash
+
+FILE="record_desktop_$(date +"%Y-%m-%d--%H-%M-%S").mkv"
+FULLSIZE=$(xdpyinfo | awk -F'[ x]+' '/dimensions:/{print $3"x"$4}')
+NOTIFY=$HOME/.local/bin/notify-polybar
+
+mkdir -p "$HOME/Vidéos"
+
+pgrep ffmpeg > /dev/null
+if [ $? -eq 1 ]; then
+    $NOTIFY -a video "Recording video"
+    ffmpeg -f x11grab -s $FULLSIZE -i ":0.0+nomouse" -vcodec libx264 -an "$HOME/Vidéos/$FILE"
+else
+    pkill -f ffmpeg
+
+    $NOTIFY -a video "Stopped Recording"
+    sleep 3
+    $NOTIFY -a video
+fi
+
+exit 0

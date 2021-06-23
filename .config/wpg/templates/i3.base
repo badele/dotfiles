@@ -80,6 +80,9 @@ bindsym $mod+m exec --no-startup-id termite -e pulsemixer
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
+# Video
+bindsym $mod+ctrl+r exec --no-startup-id ~/.local/bin/video_toggle_record_desktop
+
 # Window focus
 # || Super+Direction || Change focus | i3
 bindsym $mod+Up focus up

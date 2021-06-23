@@ -1,0 +1,78 @@
+#!/bin/env bash
+
+NOTIFYPATH=/tmp/notify-polybar
+LOCALBIN=$HOME/.local/bin
+
+function usage(){
+    echo "usage:
+    $(basename $0)
+        -a, --append <appname> <text> :   add <text> message for <appname>    
+        -n, --notify                :   get all applications notifications message
+        -c, --clean <appname        :   clean all text message for <appname>
+
+        -h, --help                  :   show this message
+        
+    "
+    exit $1
+}
+
+function addtext() {
+    appname=$1
+    text=$2
+
+    mkdir -p $NOTIFYPATH
+
+    if [ -z "$text" ]; then
+        rm "$NOTIFYPATH/$appname"
+    fi
+    echo "$text" > "$NOTIFYPATH/$appname"
+    echo "Add $text for $appname"
+}
+
+function notify() {
+    text=""
+    
+    [ -d "$NOTIFYPATH" ] || mkdir -p "$NOTIFYPATH"
+
+    # Return empty, if no notification
+    [ $(ls -1q "$NOTIFYPATH" | wc -l) -gt 0 ] || (echo ""; exit 0)
+
+     # Parse notification
+    for file in "$NOTIFYPATH"/*; do
+        text="$text | $(cat ${file})"
+    done
+
+    if [ $(($(date +%s) %2 )) -eq 0 ]; then
+        echo "${text// *|/}"
+    else
+        echo ""
+    fi
+}
+
+function cleanNotification() {
+    mkdir -p $NOTIFYPATH
+    echo "clean"
+}
+
+if [ -z "$1" ]; then
+    $LOCALBIN/battery-alert > /tmp/result
+    notify
+else
+    while test -n "$1"; do 
+        case "$1" in
+            -h|-help)
+                usage 0
+                ;;
+            -a|--append)
+                addtext "$2" "$3"
+                shift 
+                shift 
+                ;;
+            *)
+                echo "Unknown argument: $1"
+                usage 1
+                ;;
+            esac
+        shift
+    done
+fi
