@@ -7,16 +7,25 @@
 # ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚══════╝
 
 alias ll="ls -alh"
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit -m"
-alias gp="git push"
 alias zs="zinit zstatus"
 alias cdw='cd $WORK'
 alias cdp='cd $PRIVATE'
 
+# git & yadm
+alias gs="git status"
+alias gd="git diff"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+#
+alias ys="yadm status"
+alias yd="yadm diff"
+alias ya="yadm add"
+alias yc="yadm commit -m"
+alias yp="yadm push"
+
 # Trash
-alias rm='echo "use trash-put instead, if you would like use rm, use \\ rm"; false'
+alias rm='trash-put'
 alias trm='trash-put'
 alias tls='trash-list'
 alias tre='trash-restore'
