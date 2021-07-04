@@ -69,12 +69,14 @@ bindsym $mod+c --release exec ~/.local/bin/colorpicker
 # Audio
 # || Super+p || Pause media player | i3
 # || Super+m || Show TUI pulseaudio mixer | i3
+# || Super+d || Show TUI mount disk | i3
 bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/mixer output mute 
 bindsym XF86AudioMicMute exec --no-startup-id ~/.local/bin/mixer mic mute 
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/mixer output down 
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/mixer output up
 bindsym $mod+p exec --no-startup-id ~/.local/bin/mediactl play-pause
 bindsym $mod+m exec --no-startup-id termite -e pulsemixer
+bindsym $mod+d exec --no-startup-id termite -e bashmount
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -182,7 +184,7 @@ for_window [title="app launcher"] floating enable border full
 for_window [title="neolock"] floating enable; focus floating ; resize set 656 340;
 for_window [title="alsamixer"] floating enable border pixel $border
 for_window [title="pulsemixer"] floating enable border pixel $border
-
+for_window [title="bashmount"] floating enable border pixel $border
 
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
