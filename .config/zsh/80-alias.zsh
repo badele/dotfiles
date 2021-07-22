@@ -39,9 +39,10 @@ alias h=helm
 
 alias vim=nvim
 
+# Use local cheat (for testing before commit)
+alias lnavi="navi --path $PRIVATE/cheats"
+
 # Date & Time
-alias clock="peaclock --config-dir ~/.config/peaclock --config ~/.config/peaclock/clock"
-alias pomodoro="peaclock --config-dir ~/.config/peaclock --config ~/.config/peaclock/countdown"
-alias stopwatch="peaclock --config-dir ~/.config/peaclock --config ~/.config/peaclock/stopwatch"
+alias clock="peaclock --config-dir ~/.config/peaclock"
 
 alias get_i3_window_name="xprop | grep CLASS"
