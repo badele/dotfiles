@@ -1,0 +1,93 @@
+env:
+  TERM: xterm-256color
+
+title: Alacritty
+class:
+  instance: Alacritty
+  general: Alacritty
+
+shell:
+  program: /bin/bash 
+  args: 
+  - --login
+
+scrolling:
+  history: 100000
+
+font:
+  normal:
+    family: "Source Code Pro"
+    style: Regular
+  bold:
+    family: "Source Code Pro"
+    style: Bold
+  italic:
+    family: "Source Code Pro"
+    style: Italic
+  bold_italic:
+    family: "Source Code Pro Bold"
+    style: Bold Italic
+  
+  size: 6
+
+key_bindings:
+  - {{ key: V,         mods: Control|Shift, action: Paste                       }}
+  - {{ key: C,         mods: Control|Shift, action: Copy                        }}
+  - {{ key: Insert,    mods: Shift,         action: PasteSelection              }}
+  - {{ key: Key0,      mods: Control,       action: ResetFontSize               }}
+  - {{ key: Equals,    mods: Control,       action: IncreaseFontSize            }}
+  - {{ key: Plus,      mods: Control,       action: IncreaseFontSize            }}
+  - {{ key: Minus,     mods: Control,       action: DecreaseFontSize            }}
+  - {{ key: Paste,     mods: None,          action: Paste                       }}
+  - {{ key: Copy,      mods: None,          action: Copy                        }}
+  - {{ key: L,         mods: Control,       action: ClearLogNotice              }}
+  - {{ key: L,         mods: Control,       chars: "\x0c"                       }}
+  - {{ key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }}
+  - {{ key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }}
+  - {{ key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }}
+  - {{ key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }}
+
+colors:
+  primary:
+    background: '{color0}'
+    foreground: '{color15}'
+  cursor:
+    text: CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
+  search:
+    matches:
+      foreground: '{color0}'
+      background: '{color15}'
+    focused_match:
+      foreground: '{color0}'
+      background: '{color15}'
+    bar:
+      background: '0x282a36'
+      foreground: '{color15}'
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: CellForeground
+    background: '{color15}'
+  normal:
+    black:   '{color0}'
+    red:     '{color1}'
+    green:   '{color2}'
+    yellow:  '{color3}'
+    blue:    '{color4}'
+    magenta: '{color5}'
+    cyan:    '{color6}'
+    white:   '{color7}'
+  bright:
+    black:   '{color8}'
+    red:     '{color9}'
+    green:   '{color10}'
+    yellow:  '{color11}'
+    blue:    '{color12}'
+    magenta: '{color13}'
+    cyan:    '{color14}'
+    white:   '{color15}'
