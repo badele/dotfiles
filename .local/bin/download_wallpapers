@@ -114,16 +114,7 @@ wresize "https://wallpaperaccess.com/download/32-bit-1776239" bits-5.jpg
 #wresize "https://wallpaperaccess.com/download/64-bit-2638139" bits-6.jpg
 wresize "https://wallpaperaccess.com/download/64-bit-1270087" bits-7.jpg
 
-# Set themes
-wpg -a $FOLDER/*
-wpg -A $FOLDER/*
-
-# Select random scheme
-set-color-scheme-from-image
-
-exit 0
-
-# Old wallpapers
+# Other wallpapers
 wresize "https://i.redd.it/fang0g4ohin61.jpg" "solar_system.jpg"
 wresize "https://static.pexels.com/photos/417014/pexels-photo-417014.jpeg" escalator1_pexels.jpg
 wresize "https://static.pexels.com/photos/540518/pexels-photo-540518.jpeg" mountain1_pexels.jpg
@@ -190,3 +181,13 @@ wresize "https://www.wallpaperup.com/uploads/wallpapers/2015/06/12/720367/d7ad5c
 wresize "http://www.tokkoro.com/picsup/2743825-colors-4k-wallpaper-hd-background.jpg" blur7_tokkoro.jpg
 wresize "http://www.tokkoro.com/picsup/2618072-minimalism-4k-windows-wallpaper-download.jpg" abstract2_tokkoro.jpg
 
+wresize "https://pixy.org/download/5939782/" bulb-1.jpg
+wresize "https://pixy.org/download/4717885/" blur-2.jpg
+wresize 'https://pixy.org/download/56386/' blur-3.jpg
+
+# Set themes
+wpg -a $FOLDER/*
+wpg -A $FOLDER/*
+
+# Select random scheme
+set-color-scheme-from-image
