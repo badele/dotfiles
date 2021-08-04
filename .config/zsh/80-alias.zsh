@@ -13,16 +13,21 @@ alias cdp='cd $PRIVATE'
 
 # git & yadm
 alias gs="git status"
+alias gl="git log"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit -m"
-alias gp="git push"
+alias gpl="git pull"
+alias gph="git push"
+
 #
 alias ys="yadm status"
+alias yl="yadm log"
 alias yd="yadm diff"
 alias ya="yadm add"
 alias yc="yadm commit -m"
-alias yp="yadm push"
+alias ypl="yadm pull"
+alias yph="yadm push"
 
 # Trash
 alias rm='trash-put'
@@ -39,7 +44,8 @@ alias h=helm
 
 alias vim=nvim
 
-# Use local cheat (for testing before commit)
+# navi
+alias navi="navi"
 alias lnavi="navi --path $PRIVATE/cheats"
 
 # Date & Time
