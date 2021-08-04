@@ -28,7 +28,7 @@ font:
     family: Source Code Pro Bold
     style: Bold Italic
   
-  size: 6
+  size: 8
 
 key_bindings:
   - {{ key: V,         mods: Control|Shift, action: Paste                       }}
