@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # take a neofetch screenshot
-alacritty -t neolock -e 'bash' '-c' "neofetch --source ~/wallpapers ; sleep 0.2 ; scrot -d0 -zumos /tmp/neolock.png; kill $!"
+alacritty -t neolock -o "font.size=6" -e 'bash' '-c' 'neofetch --source ~/wallpapers ; sleep 0.5 ; scrot -d0 -zumos /tmp/neolock.png; kill $!'
 
 # take a desktop screenshot
 import -silent -window root /tmp/screenshot.png
@@ -15,6 +15,8 @@ convert /tmp/blurred.png /tmp/croped_lock.png -set colorspace RGB -gravity cente
 
 # screen lock
 i3lock -i /tmp/blurred.png
+
+exit 0
 
 # remove temp files
 rm /tmp/croped_lock.png
