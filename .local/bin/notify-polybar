@@ -55,7 +55,7 @@ function cleanNotification() {
 }
 
 if [ -z "$1" ]; then
-    $LOCALBIN/battery-alert > /tmp/result
+    $LOCALBIN/battery-alert
     notify
 else
     while test -n "$1"; do 

@@ -161,7 +161,7 @@ label = %date%%time%
 
 [module/wireless]
 type = internal/network
-interface = wlp3s0
+interface = ${{env:WIRELESS:}}
 
 # label-connected = %essid%
 label-connected = %{{A1:nm-connection-editor:}}%essid%%{{A}}
