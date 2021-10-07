@@ -1,0 +1,4 @@
+#!/bin/bash
+
+TOUCHPAD=$(xinput --list | grep -i "touchpad" | egrep -o "id=[0-9]+" | cut -d"=" -f2)
+xinput --set-prop $TOUCHPAD "Device Enabled" 1
