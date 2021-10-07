@@ -6,7 +6,16 @@
 # ██║  ██║███████╗██║██║  ██║███████║
 # ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚══════╝
 
-alias ll="ls -alh"
+# cat alternative
+alias cat='bat --style=plain'
+
+# ls alternative
+alias l='exa'
+alias la='exa -a'
+alias ll='exa -lah'
+alias ls='exa --color=auto'
+
+#alias ll="ls -alh"
 alias zs="zinit zstatus"
 alias cdw='cd $WORK'
 alias cdp='cd $PRIVATE'
