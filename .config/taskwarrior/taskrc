@@ -8,6 +8,9 @@
 
 # Use the command 'task show' to see all defaults and overrides
 
+# For no terminal output (file redirection)
+defaultwidth=220
+
 # Files
 data.location=~/.task
 
@@ -93,9 +96,20 @@ uda.totalactivetime.values=
 # taskwarrior-time-tracking-hook
 max_active_tasks=10
 
+# Default timesheet report
+default.timesheet.filter=( +PENDING and start.after:now-4wks ) or ( +COMPLETED and end.after:now-4wks )
+report.timesheet.filter=(+PENDING and start.after:now-4wks) or (+COMPLETED and end.after:now-4wks)
+
+# report all
+report.all.labels=ID,St,UUID,A,Age,Duration,Done,D,P,Project,Tags,R,Wait,Sch,Due,Until,Description
+report.all.columns=id,status.short,uuid.short,start.active,entry.age,totalactivetime,end.age,depends.indicator,priority,project.parent,tags.count,recur.indicator,wait.remaining,scheduled.remaining,due,until.remaining,description
+#report.all.sort=entry-
+
+
 # Report next
+report.next.filter=status:pending
 report.next.labels=ID,Active,Age,Duration,D,P,Project,Tags,R,Sch,Due,Until,Description,Urg
-report.next.columns=id,start.age,entry.age,totalactivetime,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due,until.remaining,description.count,urgency
+report.next.columns=id,start.age,entry.age,totalactivetime,depends,priority,project,tags,recur.indicator,scheduled.countdown,due,until.remaining,description.count,urgency
 
 # Report list
 report.list.labels=ID,Active,Age,Duration,D,P,Project,Tags,R,Sch,Due,Until,Description,Urg

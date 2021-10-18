@@ -7,7 +7,7 @@ regexp=Fichier.*: (\S+)
 colours=unchanged, bold
 -
 # File Type
-regexp=IO\sBlock:\s\d+\s+(.*)$
+regexp=Block:\s\d+\s+(.*)$
 colours=unchanged, bold green
 -
 # SELinux from conf.ls
