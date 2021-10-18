@@ -24,6 +24,7 @@ alias cdp='cd $PRIVATE'
 alias gs="git status"
 alias gl="git log"
 alias gd="git diff"
+alias gb="git branch"
 alias ga="git add"
 alias gc="git commit -m"
 alias gpl="git pull"
@@ -33,10 +34,16 @@ alias gph="git push"
 alias ys="yadm status"
 alias yl="yadm log"
 alias yd="yadm diff"
+alias yb="yadm branch"
 alias ya="yadm add"
 alias yc="yadm commit -m"
 alias ypl="yadm pull"
 alias yph="yadm push"
+
+# Docker
+alias de="docker exec -it"
+alias ds="docker stop"
+alias dps="docker ps"
 
 # Trash
 alias rm='trash-put'
@@ -46,6 +53,7 @@ alias tre='trash-restore'
 alias tem='trash-empty'
 
 # Cloud & co
+unalias kubectl # Disable clourify for using P10K plugin
 alias a=aws
 alias g=gcloud
 alias k=kubectl
