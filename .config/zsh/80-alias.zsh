@@ -20,7 +20,7 @@ alias zs="zinit zstatus"
 alias cdw='cd $WORK'
 alias cdp='cd $PRIVATE'
 
-# git & yadm
+# git
 alias gs="git status"
 alias gl="git log"
 alias gd="git diff"
@@ -30,7 +30,7 @@ alias gc="git commit -m"
 alias gpl="git pull"
 alias gph="git push"
 
-#
+# yadm
 alias ys="yadm status"
 alias yl="yadm log"
 alias yd="yadm diff"
@@ -39,6 +39,17 @@ alias ya="yadm add"
 alias yc="yadm commit -m"
 alias ypl="yadm pull"
 alias yph="yadm push"
+
+# pass
+alias ps="pass git status"
+alias pl="pass git log"
+alias pd="pass git diff"
+alias pb="pass git branch"
+alias pa="pass git add"
+alias pc="pass git commit -m"
+alias ppl="pass git pull"
+alias pph="pass git push"
+
 
 # Docker
 alias de="docker exec -it"
