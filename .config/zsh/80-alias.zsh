@@ -76,6 +76,9 @@ alias vim=nvim
 alias navi="navi"
 alias lnavi="navi --path $PRIVATE/cheats"
 
+# copy to clipboard
+alias toclipboard="xclip -selection clipboard"
+
 # Date & Time
 alias clock="peaclock --config-dir ~/.config/peaclock"
 
