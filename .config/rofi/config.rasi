@@ -6,11 +6,11 @@ run-shell-command: "termite --name \"{cmd}\" -e \"{cmd}\"";
 
 // Display
 font: "Source Code Pro 18";
-theme: "solarized";
 show-icons: true;
 icon-theme: "Papirus";
 
 }
+@theme "solarized"
 
 element-icon {
     size:             1.0em ;
