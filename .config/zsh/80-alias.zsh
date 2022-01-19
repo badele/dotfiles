@@ -6,6 +6,9 @@
 # ██║  ██║███████╗██║██║  ██║███████║
 # ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═╝╚══════╝
 
+# SSH
+alias sshk='ssh -o StrictHostKeyChecking=no'
+
 # cat alternative
 alias cat='bat --style=plain'
 
@@ -41,7 +44,7 @@ alias ypl="yadm pull"
 alias yph="yadm push"
 
 # pass
-alias ps="pass git status"
+alias pps="pass git status"
 alias pl="pass git log"
 alias pd="pass git diff"
 alias pb="pass git branch"
@@ -64,7 +67,7 @@ alias tre='trash-restore'
 alias tem='trash-empty'
 
 # Cloud & co
-unalias kubectl # Disable clourify for using P10K plugin
+#unalias kubectl # Disable clourify for using P10K plugin
 alias a=aws
 alias g=gcloud
 alias k=kubectl
