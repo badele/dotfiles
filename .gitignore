@@ -1,3 +1,7 @@
+# Work
+.config/zsh/81-alias-priv.zsh
+.config/zsh/16-variables-priv.zsh
+
 # GPG
 .config/gnupg/*
 !.config/gnupg/gpg.conf

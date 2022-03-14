@@ -62,8 +62,10 @@ bindsym $mod+Shift+e exec --no-startup-id ~/.local/bin/launch-launcher rofi powe
 # || Print || Take a desktop screenshot | i3
 # || Shift+Print || Take a selection screenshot | i3
 # || Super+c || Color picker | i3
-bindsym Print exec --no-startup-id i3-scrot
-bindsym Shift+Print --release exec --no-startup-id i3-scrot -s
+
+bindsym Print exec --no-startup-id flameshot gui
+#bindsym Print exec --no-startup-id i3-scrot
+#bindsym Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+c --release exec ~/.local/bin/colorpicker
 
 # Audio
