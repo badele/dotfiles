@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# Init vars
+BACKGROUND="#000000"
+FONTCOLOR="#FFD800"
+FONTSTYLE="Cantarell-Extra-Bold"
+
+timestamp-watermark() {
+
+    FULLNAME=$(realpath -e "$1")
+    FILENAME=$(basename "$FULLNAME")
+    DIRNAME=$(dirname "$FULLNAME")
+
+
+    # Exit if image not exists
+    test -f "${FULLNAME}" || exit 0
+
+    mkdir -p ${DIRNAME}/watermark
+
+    # Get image infos
+    read WIDTH HEIGHT TIMESTAMP <<< $(identify -ping -format "%w %h %[EXIF:DateTimeOriginal]" "${FULLNAME}")
+
+    # Exit if no timestamp
+    test -z "${TIMESTAMP}" && exit 0
+
+    # Compute variables
+    DATELENGTH=$(expr ${WIDTH} / 3)
+    DATEPOFFSET=$(expr ${WIDTH} / 20)
+    DATEWIDTH=$(expr ${WIDTH} / 600)
+
+    # Add timestamp watermark
+    convert \
+    -verbose \
+    -background "none" \
+    -stroke ${FONTCOLOR} \
+    -strokewidth ${DATEWIDTH} \
+    -undercolor ${BACKGROUND} \
+    -font ${FONTSTYLE} \
+    -fill ${FONTCOLOR} \
+    -size ${DATELENGTH}x \
+    -gravity center label:"${TIMESTAMP}" "${FULLNAME}" +swap \
+    -gravity southeast \
+    -geometry +${DATEPOFFSET}+${DATEPOFFSET} \
+    -composite "${DIRNAME}/watermark/${FILENAME}"
+} 
+
+##########################################################
+# Main
+##########################################################
+
+# File
+if [ -f "$1" ]; then
+    timestamp-watermark $1
+else
+    if [ -d "$1" ]; then
+        for FILE in $(find "$1" -type f | grep -v watermark); do
+            timestamp-watermark ${FILE}
+        done
+    fi
+fi
