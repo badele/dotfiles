@@ -6,3 +6,5 @@
 	gpgsign = true
 [pull]
 	rebase = true
+[diff]
+	external = difft
