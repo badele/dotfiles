@@ -32,6 +32,10 @@ export GPG_USERID=00F421C4C5377BA39820E13F6B95E13DE469CC5D
 export GPG_BACKUP_DIR=/mnt/usb-black-disk/freefilesync/famille/bruno/home/security/gpg
 export TELEPORT_USE_LOCAL_SSH_AGENT="false"
 
+# AGE
+export AGE_PUBLIC_KEY="age1xmunmxy9u93gclsc962ctcswawa8w73vqjwe0csykhwth46qpv3qun3657"
+export AGE_PRIVATE_FILE="~/.age/secret-key.txt"
+
 # Private folderss
 export WORK=${HOME}/work/projects
 export PRIVATE=${HOME}/private/projects

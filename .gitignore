@@ -8,6 +8,9 @@
 !.config/gnupg/gpg-agent.conf
 !.config/gnupg/sshcontrol
 
+# Age
+.age
+
 # wpg
 .config/i3/config
 .config/polybar/config
