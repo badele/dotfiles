@@ -14,7 +14,7 @@ floating_modifier $mod
 set $mod Mod4
 set $alt Mod1
 set $ctrl ctrl
-set $terminal alacritty
+set $terminal wezterm
 set $i3lock ~/.local/bin/lock-computer
 set $border 1
 set $gaps_inner 10

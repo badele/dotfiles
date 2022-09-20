@@ -19,14 +19,16 @@ setopt promptsubst
 # Plugins
 ################################
 
+
 # autojump
 # yay -S autojump
-zinit ice wait lucid
-zinit snippet OMZP::autojump
+#zinit ice wait lucid
+#zinit snippet OMZP::autojump
 
 # asdf
-# yay -S asdf-vm
-zinit ice wait lucid
+# git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
+autoload -Uz bashcompinit && bashcompinit
+zinit ice wait lucid atinit'zicompinit; zicdreplay'
 zinit snippet OMZP::asdf
 # See loader at bottom of this file
 
@@ -69,8 +71,8 @@ zinit snippet OMZP::systemd
 
 # Taskwarrior
 # yay -S task
-zinit ice wait lucid
-zinit snippet OMZP::taskwarrior
+#zinit ice wait lucid
+#zinit snippet OMZP::taskwarrior
 
 # Prepend sudo when pressing esc
 zinit ice wait lucid
@@ -125,7 +127,7 @@ zinit snippet OMZ::plugins/pass/_pass
 
 
 # Load asdf tool
-. /opt/asdf-vm/asdf.sh
+# test -f $HOME/.asdf/asdf.sh && . $HOME/.asdf/asdf.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
