@@ -1,11 +1,11 @@
 local wezterm = require 'wezterm';
 
 return {
+    window_close_confirmation = "NeverPrompt",
     font = wezterm.font("MesloLGS NF"),
-    window_close_confirmation = 'NeverPrompt',
     colors = {
-      foreground = '#fffffd',
-      background = '#26251e',
+      foreground = '#fffff9',
+      background = '#262006',
   
       cursor_bg = '#52ad70',
       cursor_fg = 'black',
@@ -19,24 +19,24 @@ return {
       split = '#444444',
   
       ansi = {
-        '#26251e',
-        '#bd1d26',
-        '#ab455d',
-        '#bfbb97',
-        '#1e6eaa',
-        '#a67f97',
-        '#7593a9',
-        '#c8c8c6',
+        '#262006',
+        '#c2393c',
+        '#74b058',
+        '#c1a421',
+        '#713db0',
+        '#5e90aa',
+        '#0f94ba',
+        '#c8c7c0',
       },
       brights = {
-        '#424033',
-        '#ff1724',
-        '#ed4a70',
-        '#ffffae',
-        '#1990ea',
-        '#ea92c8',
-        '#85c1ee',
-        '#fffffd',
+        '#52440b',
+        '#ff393e',
+        '#90f561',
+        '#ffde1c',
+        '#913ff4',
+        '#69c0ee',
+        '#06c7ff',
+        '#fffff9',
       },
   
       -- Arbitrary colors of the palette in the range from 16 to 255

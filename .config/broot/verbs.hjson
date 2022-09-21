@@ -43,9 +43,7 @@
     {
       "invocation": "goto_wallpapers",
       "shortcut": "gw",
-      "execution": ":focus ~/wallpapers",
-      # br -c ":gw;/.(png|jpg|jpeg|gif):preview_image"
-      # "execution": ":focus ~/wallpapers ;/.(png|jpg|jpeg|gif):preview_image",
+      "cmd": ":focus ~/wallpapers;/.jpg|.jpeg|.png|.gif;:preview_image",
       "leave_broot": false
     },
     {

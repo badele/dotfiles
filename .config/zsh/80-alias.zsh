@@ -16,7 +16,7 @@ alias up="up" ## pipe output (we can run linux command in realtime)
 alias dig="dog A CNAME MX TXT AAAA NS" ## dig DNS resolution alternative (dog)
 alias hexyl="hexyl --border none" ## hexdump alternative
 alias http="http" ## curl alternative
-alias br="br -sdp" ## File manager
+alias br="br" ## File manager
 
 # ZSH help
 alias zkeys="cat ~/.config/zsh/90-bindkeys.zsh | grep -Eo '# \[.*' | sed 's/]/] >/g' | column -t -s \">\"" ## Show all ZSH shortcuts

@@ -10,7 +10,7 @@
 
 # Wallpapers selector
 function brw () {
- br -c ":gw;/.(png|jpg|jpeg|gif):preview_image"
+ br -c ":gw"
 }
 
 # Filter

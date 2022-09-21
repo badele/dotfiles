@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm';
 
 return {{
+    window_close_confirmation = "NeverPrompt",
     font = wezterm.font("MesloLGS NF"),
     colors = {{
       foreground = '{color15}',
