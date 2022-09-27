@@ -18,6 +18,18 @@ alias hexyl="hexyl --border none" ## hexdump alternative
 alias http="http" ## curl alternative
 alias br="br" ## File manager
 
+# ps & top  alternative
+alias psc="procs --sortd cpu"
+alias psm="procs --sortd mem"
+alias psw="procs --sortd read"
+alias psw="procs --sortd write"
+
+alias topc="procs -W 1 --sortd cpu"
+alias topm="procs -W 1 --sortd mem"
+alias topw="procs -W 1 --sortd read"
+alias topw="procs -W 1 --sortd write"
+
+
 # ZSH help
 alias zkeys="cat ~/.config/zsh/90-bindkeys.zsh | grep -Eo '# \[.*' | sed 's/]/] >/g' | column -t -s \">\"" ## Show all ZSH shortcuts
 alias zalias="cat ~/.config/zsh/80-alias.zsh | pcregrep -o1 -o2 '^alias (.*)=\".*?\"( ## .*)' | column -s'#' -t" ## Show all ZSH alias
@@ -52,7 +64,9 @@ alias ji="__zoxide_zi" ## Interactive autojump folder (zoxide)
 alias gs="git status" ## git status
 alias gl="git log" ## git log
 alias gd="git diff" ## git diff
-alias gbr="git branch" ## git branch
+alias gds="git diff --staged" ## git diff
+alias gcb="git checkout"
+alias gbl="git branch" ## git branch
 alias gbm="git blame" ## git blame
 alias ga="git add" ## git add
 alias gc="git commit -m" ## git commit
@@ -63,7 +77,8 @@ alias gph="git push" ## git push
 alias ys="yadm status" ## yadm status
 alias yl="yadm log" ## yadm log
 alias yd="yadm diff" ## yadm diff
-alias ybr="yadm branch" ## yadm branch
+alias yds="yadm diff --staged" ## yadm diff
+alias ybl="yadm branch" ## yadm branch
 alias ybm="yadm blame" ## yadm blame
 alias ya="yadm add" ## yadm add
 alias yc="yadm commit -m" ## yadm commit
@@ -74,7 +89,8 @@ alias yph="yadm push" ## yadm push
 alias pps="pass git status" ## pass status
 alias pl="pass git log" ## pass log
 alias pd="pass git diff" ## pass diff
-alias pbr="pass git branch" ## pass branch
+alias pds="pass git diff" ## pass diff
+alias pbl="pass git branch" ## pass branch
 alias pbm="pass git blame" ## pass blame
 alias pa="pass git add" ## pass add
 alias pc="pass git commit -m" ## pass commit
