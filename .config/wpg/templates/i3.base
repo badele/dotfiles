@@ -77,8 +77,8 @@ bindsym XF86AudioMicMute exec --no-startup-id ~/.local/bin/mixer mic mute
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/mixer output down 
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/mixer output up
 bindsym $mod+p exec --no-startup-id ~/.local/bin/mediactl play-pause
-bindsym $mod+m exec --no-startup-id $terminal -e pulsemixer
-bindsym $mod+d exec --no-startup-id $terminal -e bashmount
+bindsym $mod+m exec --no-startup-id $terminal start --class pulsemixer -- pulsemixer
+bindsym $mod+d exec --no-startup-id $terminal start --class bashmount -- bashmount
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -185,8 +185,8 @@ for_window [class="Spotify"] move to workspace $w2
 for_window [title="app launcher"] floating enable border full
 for_window [title="neolock"] floating enable; focus floating ; resize set 980 400;
 for_window [title="alsamixer"] floating enable border pixel $border
-for_window [title="pulsemixer"] floating enable border pixel $border
-for_window [title="bashmount"] floating enable border pixel $border
+for_window [class="pulsemixer"] floating enable border pixel $border
+for_window [class="bashmount"] floating enable border pixel $border
 
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
