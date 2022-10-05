@@ -9,8 +9,11 @@
 # Paths
 export PATH=${HOME}/.local/bin:${PATH}
 
+# Kubernetes contexts
+export KUBECONFIG=$(ls -1 ~/.kube/*.yml | tr "\n" ":")
+
 # Terminal
-export TERMINAL=termite
+export TERMINAL=wezterm
 export EDITOR=nvim
 
 # Less for colors man page
