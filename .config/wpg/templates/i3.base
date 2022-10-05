@@ -64,8 +64,8 @@ bindsym $mod+Shift+e exec --no-startup-id ~/.local/bin/launch-launcher rofi powe
 # || Super+c || Color picker | i3
 
 bindsym Print exec --no-startup-id flameshot gui
+bindsym Shift+Print --release exec --no-startup-id peek
 #bindsym Print exec --no-startup-id i3-scrot
-#bindsym Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+c --release exec ~/.local/bin/colorpicker
 
 # Audio
