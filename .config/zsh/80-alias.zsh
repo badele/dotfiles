@@ -70,6 +70,9 @@ alias gbl="git branch" ## git branch
 alias gbm="git blame" ## git blame
 alias ga="git add" ## git add
 alias gc="git commit -m" ## git commit
+alias gss="git stash" ## git stash
+alias gsl="git stash list" ## git stash list
+alias gsp="git stash pop" ## git stash pop
 alias gpl="git pull" ## git pull
 alias gph="git push" ## git push
 
@@ -116,12 +119,14 @@ alias tem="trash-empty" ## delete all files from trash
 alias a="aws" ## aws alias
 alias g="gcloud" ## gcloud alias
 alias k="kubectl" ## kubectl alias
+alias kcc="k config current-context"
 alias h="helm" ## helm alias
 
 alias vim="nvim" ## alternative vim (nvim)
 
 # navi
 alias lnavi="navi --path $PRIVATE/cheats" ## Show cheat commands
+alias lpnavi="navi --print --path $PRIVATE/cheats" ## Show cheat commands
 
 # copy to clipboard
 alias toclipboard="xclip -selection clipboard" ## Copy output to clipboard
