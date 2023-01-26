@@ -7,7 +7,7 @@
 	gpgsign = true
 
 [pull]
-	rebase = true
+	rebase = false
 
 #[diff]
 #	external = difft
@@ -25,3 +25,6 @@
 [merge]
     conflictstyle = diff3
 
+[credential "https://gitlab.seq.one"]
+	helper = 
+	helper = !/usr/bin/glab auth git-credential
